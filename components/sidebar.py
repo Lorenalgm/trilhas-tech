@@ -1,19 +1,15 @@
-"""Sidebar component"""
 import streamlit as st
 from typing import Dict, Any
 from utils.data_loader import load_data
 
 
 def render_sidebar():
-    """Render sidebar with navigation and context/track selection"""
     DATA = load_data("data/sample.yml")
     
     with st.sidebar:
-        st.title("🧭 Navegação")
+       
+        st.title("Navegação")
         
-        st.divider()
-        
-        # Page navigation
         page = st.radio(
             "Página",
             ["Início", "Trilha", "Detalhes", "Comparação"],
@@ -24,11 +20,8 @@ def render_sidebar():
         if page != st.session_state.current_page:
             st.session_state.current_page = page
             st.rerun()
-        
-        st.divider()
-        
-        # Context and track selection
-        st.markdown("### Configuração")
+
+        st.markdown("### Escolha:")
         
         context_keys = list(DATA["contexts"].keys())
         context = st.selectbox(
@@ -54,8 +47,7 @@ def render_sidebar():
             st.session_state.selected_track = track
             st.rerun()
         
-        # Show info if context/track not selected
         if not st.session_state.selected_context or not st.session_state.selected_track:
             st.info("💡 Selecione contexto e trilha para explorar as trilhas de carreira.")
-    
+        
     return DATA, context, track

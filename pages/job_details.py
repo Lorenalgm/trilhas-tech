@@ -1,4 +1,3 @@
-"""Job details page"""
 import streamlit as st
 from utils.data_loader import load_data
 from utils.helpers import sort_levels
@@ -6,7 +5,6 @@ from components.render import render_header, render_skill_compact
 
 
 def render():
-    """Render job details page with compact skill list"""
     DATA = load_data("data/sample.yml")
     
     context = st.session_state.selected_context or list(DATA["contexts"].keys())[0]
@@ -21,22 +19,21 @@ def render():
         f"Contexto: {DATA['contexts'][context]['name']}",
     )
     
-    # Navigation buttons - more discrete
     col_nav1, col_nav2, col_nav3 = st.columns([1, 2, 1])
     with col_nav1:
         if current_idx > 0:
             prev_level = levels[current_idx - 1]
-            if st.button("← Anterior", key="nav_prev", use_container_width=True, type="secondary"):
+            if st.button("⬅", key="nav_prev", use_container_width=True, type="secondary"):
                 st.session_state.selected_level = prev_level
                 st.rerun()
     with col_nav2:
-        if st.button("Voltar para Trilha", key="nav_home", use_container_width=True, type="secondary"):
+        if st.button("Trilha", key="nav_home", use_container_width=True, type="secondary"):
             st.session_state.current_page = "Trilha"
             st.rerun()
     with col_nav3:
         if current_idx < len(levels) - 1:
             next_level = levels[current_idx + 1]
-            if st.button("Próximo →", key="nav_next", use_container_width=True, type="secondary"):
+            if st.button("➡", key="nav_next", use_container_width=True, type="secondary"):
                 st.session_state.selected_level = next_level
                 st.rerun()
     
@@ -55,16 +52,11 @@ def render():
     
     if scope:
         st.markdown("### Responsabilidades")
-        st.markdown("""
-        <div style="background: rgba(255, 255, 255, 0.6); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.1); margin: 1rem 0;">
-        """, unsafe_allow_html=True)
         for s in scope:
             st.markdown(f"• {s}")
         st.markdown("</div>", unsafe_allow_html=True)
     
-    st.markdown("---")
-    
-    tabs = st.tabs(["Competências Técnicas", "Competências Não Técnicas"])
+    tabs = st.tabs(["Competências técnicas", "Competências não técnicas"])
     
     with tabs[0]:
         st.caption("Clique em cada competência para ver detalhes, evidências e materiais recomendados.")
@@ -82,7 +74,6 @@ def render():
         else:
             st.info("Nenhuma competência não técnica definida para este nível.")
     
-    # Compare with next level button
     st.markdown("---")
     if current_idx < len(levels) - 1:
         next_level = levels[current_idx + 1]

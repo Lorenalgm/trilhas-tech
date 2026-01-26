@@ -1,4 +1,3 @@
-"""Career path visualization page"""
 import streamlit as st
 from utils.data_loader import load_data
 from utils.helpers import sort_levels
@@ -6,7 +5,6 @@ from components.render import render_header, render_pills
 
 
 def render():
-    """Render career path page with Streamlit native cards"""
     DATA = load_data("data/sample.yml")
     
     context = st.session_state.selected_context or list(DATA["contexts"].keys())[0]
@@ -19,15 +17,8 @@ def render():
         f"Contexto: {DATA['contexts'][context]['name']}",
     )
     
-    render_pills([
-        f"Contexto: {DATA['contexts'][context]['name']}",
-        f"Trilha: {DATA['tracks'][track]['name']}",
-    ])
-    
     st.markdown("## Níveis da Trilha")
-    st.caption("Clique em um nível para ver detalhes")
     
-    # Use Streamlit columns with cards
     cols_per_row = min(4, len(levels))
     num_rows = (len(levels) + cols_per_row - 1) // cols_per_row
     
@@ -52,13 +43,12 @@ def render():
                         
                         scope_preview = scope[0][:60] + "..." if scope and len(scope[0]) > 60 else (scope[0] if scope else "Nível de carreira")
                         
-                        # Create card using HTML
                         st.markdown(
                             f"""
                             <div style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 1.25rem; background: rgba(255, 255, 255, 0.6); margin-bottom: 1rem;">
                                 <h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">{level}</h4>
                                 <p style="margin: 0.5rem 0; opacity: 0.8; font-size: 0.9rem;">{scope_preview}</p>
-                                <p style="margin: 0.5rem 0 0 0; opacity: 0.7; font-size: 0.85rem;">{tech_count} técnicas | {soft_count} não técnicas</p>
+                                <p style="margin: 0.5rem 0 0 0; opacity: 0.7; font-size: 0.85rem;">{tech_count} técnicas | {soft_count} soft skills</p>
                             </div>
                             """,
                             unsafe_allow_html=True,
