@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_data
-from utils.helpers import sort_levels
+from utils.helpers import sort_levels, get_role_data
 from components.render import render_header, render_pills
 
 
@@ -30,9 +30,7 @@ def render():
                 level = levels[level_idx]
                 with cols[col_idx]:
                     try:
-                        role_data = DATA["contexts"][context]["data"][track].get(level, {})
-                        if not role_data:
-                            role_data = DATA["contexts"][context]["data"][track].get(f'"{level}"', {})
+                        role_data = get_role_data(DATA, level, context, track)
                         
                         scope = role_data.get("scope", [])
                         tech = role_data.get("tech", [])

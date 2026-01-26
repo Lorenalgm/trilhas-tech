@@ -31,7 +31,7 @@ levels:
         tips:
           - "Priorize entender o fluxo ponta a ponta antes de otimizar."
         tech:
-          - name: "Linguagem (fundamentos)"
+          - name: "Linguagem"
             depth: "Conhece"
             expectation: "Sintaxe, estruturas de dados básicas e leitura de código."
             evidence:
@@ -49,7 +49,7 @@ levels:
               - title: "REST API concepts"
                 url: "https://restfulapi.net/"
                 type: "artigo"
-          - name: "SQL básico"
+          - name: "Banco de dados"
             depth: "Conhece"
             expectation: "CRUD, SELECT com filtros, JOIN simples."
             evidence:
@@ -85,7 +85,7 @@ levels:
               - title: "MDN Web Docs - HTML"
                 url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
                 type: "docs"
-          - name: "JavaScript (fundamentos)"
+          - name: "JavaScript"
             depth: "Conhece"
             expectation: "Variáveis, funções, arrays, objetos e manipulação do DOM."
             evidence:
@@ -123,7 +123,7 @@ levels:
           - "Aprender fundamentos de programação e boas práticas"
           - "Trabalhar em tarefas pequenas com supervisão próxima"
         tech:
-          - name: "Linguagem (fundamentos sólidos)"
+          - name: "Linguagem"
             depth: "Conhece"
             expectation: "Sintaxe completa, estruturas de dados, orientação a objetos e padrões básicos."
             evidence:
@@ -168,7 +168,7 @@ levels:
           - "Aprender HTML, CSS e JavaScript fundamentais"
           - "Trabalhar em componentes simples com supervisão"
         tech:
-          - name: "HTML/CSS avançado"
+          - name: "HTML/CSS"
             depth: "Conhece"
             expectation: "Semântica, acessibilidade básica, CSS moderno (Grid, Flexbox)."
             evidence:
@@ -177,7 +177,7 @@ levels:
               - title: "MDN Web Docs"
                 url: "https://developer.mozilla.org/"
                 type: "docs"
-          - name: "JavaScript ES6+"
+          - name: "JavaScript"
             depth: "Conhece"
             expectation: "Arrow functions, destructuring, async/await, módulos."
             evidence:
@@ -201,7 +201,34 @@ levels:
           - "Implementar endpoints e regras simples com testes básicos"
           - "Trabalhar com autenticação e validações"
         tech:
-          - name: "Framework web"
+          - name: "Linguagem"
+            depth: "Aplica"
+            expectation: "Sintaxe avançada, estruturas de dados e padrões de código."
+            evidence:
+              - "Escreve código limpo e eficiente"
+            resources:
+              - title: "Clean Code"
+                url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                type: "artigo"
+          - name: "APIs REST"
+            depth: "Aplica"
+            expectation: "Endpoints, verbos HTTP, status codes e validação."
+            evidence:
+              - "Implementa APIs RESTful seguindo boas práticas"
+            resources:
+              - title: "REST API Design"
+                url: "https://restfulapi.net/"
+                type: "artigo"
+          - name: "Banco de dados"
+            depth: "Aplica"
+            expectation: "SQL intermediário, relacionamentos e queries eficientes."
+            evidence:
+              - "Escreve queries otimizadas e entende relacionamentos"
+            resources:
+              - title: "SQL Tutorial"
+                url: "https://www.sql-tutorial.com/"
+                type: "docs"
+          - name: "Framework"
             depth: "Aplica"
             expectation: "Rotas, middlewares, validação e estrutura de projeto."
             evidence:
@@ -246,7 +273,25 @@ levels:
           - "Implementar componentes reutilizáveis"
           - "Integrar com APIs e gerenciar estado básico"
         tech:
-          - name: "Framework (React/Vue/Angular)"
+          - name: "HTML/CSS"
+            depth: "Aplica"
+            expectation: "Estrutura semântica, estilização avançada e responsividade."
+            evidence:
+              - "Cria layouts responsivos e acessíveis"
+            resources:
+              - title: "MDN Web Docs"
+                url: "https://developer.mozilla.org/"
+                type: "docs"
+          - name: "JavaScript"
+            depth: "Aplica"
+            expectation: "ES6+, async/await, módulos e manipulação do DOM."
+            evidence:
+              - "Usa recursos modernos do JavaScript efetivamente"
+            resources:
+              - title: "JavaScript.info"
+                url: "https://javascript.info/"
+                type: "docs"
+          - name: "Framework"
             depth: "Aplica"
             expectation: "Componentes, props, state e ciclo de vida básico."
             evidence:
@@ -255,7 +300,7 @@ levels:
               - title: "React Documentation"
                 url: "https://react.dev/"
                 type: "docs"
-          - name: "Gerenciamento de estado"
+          - name: "State Management"
             depth: "Aplica"
             expectation: "Estado local, props drilling e hooks básicos."
             evidence:
@@ -264,7 +309,7 @@ levels:
               - title: "React State Management"
                 url: "https://react.dev/learn/managing-state"
                 type: "docs"
-          - name: "APIs e HTTP"
+          - name: "APIs REST"
             depth: "Aplica"
             expectation: "Fetch, axios, tratamento de erros básico."
             evidence:
@@ -293,7 +338,25 @@ levels:
             - "Implementar endpoints REST simples"
             - "Escrever testes unitários básicos"
           tech:
-            - name: "Framework web"
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe completa, estruturas de dados e padrões básicos."
+              evidence:
+                - "Escreve código seguindo convenções da linguagem"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "APIs REST"
+              depth: "Aplica"
+              expectation: "Endpoints REST, verbos HTTP e validação."
+              evidence:
+                - "Implementa endpoints REST seguindo padrões"
+              resources:
+                - title: "REST API Design"
+                  url: "https://restfulapi.net/"
+                  type: "artigo"
+            - name: "Framework"
               depth: "Aplica"
               expectation: "Rotas, controllers, middlewares e estrutura de projeto."
               evidence:
@@ -338,7 +401,7 @@ levels:
             - "Implementar componentes React/Vue/Angular"
             - "Integrar com APIs REST"
           tech:
-            - name: "Framework moderno"
+            - name: "Framework"
               depth: "Aplica"
               expectation: "Componentes, hooks/composition API, roteamento básico."
               evidence:
@@ -347,7 +410,7 @@ levels:
                 - title: "React Documentation"
                   url: "https://react.dev/"
                   type: "docs"
-            - name: "State management básico"
+            - name: "State Management"
               depth: "Aplica"
               expectation: "Context API, Redux/Zustand básico."
               evidence:
@@ -370,7 +433,16 @@ levels:
             - "Implementar features com múltiplas integrações"
             - "Otimizar queries e performance básica"
           tech:
-            - name: "APIs REST avançadas"
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, estruturas de dados e padrões."
+              evidence:
+                - "Escreve código eficiente e bem estruturado"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "APIs REST"
               depth: "Aplica"
               expectation: "Versionamento, paginação, filtros e tratamento de erros robusto."
               evidence:
@@ -417,7 +489,7 @@ levels:
             - "Implementar features complexas com múltiplos componentes"
             - "Otimizar performance básica"
           tech:
-            - name: "Performance frontend"
+            - name: "Performance"
               depth: "Aplica"
               expectation: "Code splitting, lazy loading, memoização básica."
               evidence:
@@ -426,7 +498,7 @@ levels:
                 - title: "Web Performance"
                   url: "https://web.dev/performance/"
                   type: "docs"
-            - name: "Testes frontend"
+            - name: "Testes"
               depth: "Aplica"
               expectation: "Testing Library, testes unitários e de integração."
               evidence:
@@ -449,6 +521,42 @@ levels:
             - "Projetar soluções para problemas médios"
             - "Liderar pequenas iniciativas técnicas"
           tech:
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, estruturas de dados e padrões de design."
+              evidence:
+                - "Escreve código seguindo padrões estabelecidos"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "APIs REST"
+              depth: "Aplica"
+              expectation: "APIs complexas com versionamento e padrões robustos."
+              evidence:
+                - "Implementa APIs escaláveis e bem documentadas"
+              resources:
+                - title: "REST API Design"
+                  url: "https://restfulapi.net/"
+                  type: "artigo"
+            - name: "Banco de dados"
+              depth: "Aplica"
+              expectation: "Otimização avançada, índices e análise de performance."
+              evidence:
+                - "Otimiza queries e modela dados eficientemente"
+              resources:
+                - title: "Database Performance"
+                  url: "https://use-the-index-luke.com/"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Aplica"
+              expectation: "Testes de integração e estratégias de cobertura."
+              evidence:
+                - "Cobre fluxos críticos com testes adequados"
+              resources:
+                - title: "Integration Testing"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
             - name: "Design patterns"
               depth: "Aplica"
               expectation: "Factory, Strategy, Repository e outros padrões comuns."
@@ -458,7 +566,7 @@ levels:
                 - title: "Design Patterns"
                   url: "https://refactoring.guru/design-patterns"
                   type: "artigo"
-            - name: "Arquitetura de software"
+            - name: "Arquitetura"
               depth: "Conhece"
               expectation: "Layered architecture, clean architecture básica."
               evidence:
@@ -494,7 +602,7 @@ levels:
             - "Definir padrões de componentes"
             - "Liderar pequenas iniciativas técnicas"
           tech:
-            - name: "Arquitetura frontend"
+            - name: "Arquitetura"
               depth: "Aplica"
               expectation: "Estrutura de pastas, organização de código, padrões."
               evidence:
@@ -529,6 +637,24 @@ levels:
           - "Projetar e implementar features médias"
           - "Assumir ownership de partes do sistema"
         tech:
+          - name: "Linguagem"
+            depth: "Aplica"
+            expectation: "Sintaxe avançada, estruturas de dados e padrões de código."
+            evidence:
+              - "Escreve código limpo e eficiente"
+            resources:
+              - title: "Clean Code"
+                url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                type: "artigo"
+          - name: "APIs REST"
+            depth: "Decide"
+            expectation: "Define padrões, versionamento e contratos de API."
+            evidence:
+              - "Estabelece padrões de API para o time"
+            resources:
+              - title: "Richardson Maturity Model"
+                url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                type: "artigo"
           - name: "Testes"
             depth: "Decide"
             expectation: "Define estratégia de testes, escolhe ferramentas e estabelece padrões de cobertura."
@@ -539,7 +665,7 @@ levels:
               - title: "Test Pyramid"
                 url: "https://martinfowler.com/articles/practical-test-pyramid.html"
                 type: "artigo"
-          - name: "Arquitetura de APIs"
+          - name: "Arquitetura"
             depth: "Decide"
             expectation: "Versionamento, consistência, padrões, erros e contratos."
             evidence:
@@ -581,7 +707,43 @@ levels:
           - "Otimizar performance e acessibilidade"
           - "Arquitetar features complexas"
         tech:
-          - name: "Arquitetura frontend"
+          - name: "HTML/CSS"
+            depth: "Aplica"
+            expectation: "Estrutura semântica avançada, CSS moderno e acessibilidade."
+            evidence:
+              - "Cria layouts responsivos e acessíveis"
+            resources:
+              - title: "MDN Web Docs"
+                url: "https://developer.mozilla.org/"
+                type: "docs"
+          - name: "JavaScript"
+            depth: "Aplica"
+            expectation: "ES6+, async/await, módulos e padrões avançados."
+            evidence:
+              - "Usa recursos modernos do JavaScript efetivamente"
+            resources:
+              - title: "JavaScript.info"
+                url: "https://javascript.info/"
+                type: "docs"
+          - name: "Framework"
+            depth: "Decide"
+            expectation: "Define padrões de componentes e estrutura de projeto."
+            evidence:
+              - "Estabelece padrões de framework para o time"
+            resources:
+              - title: "React Documentation"
+                url: "https://react.dev/"
+                type: "docs"
+          - name: "State Management"
+            depth: "Decide"
+            expectation: "Define estratégias de gerenciamento de estado."
+            evidence:
+              - "Estabelece padrões de state management"
+            resources:
+              - title: "State Management"
+                url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                type: "artigo"
+          - name: "Arquitetura"
             depth: "Decide"
             expectation: "Estrutura de pastas, padrões de componentes e organização de código."
             evidence:
@@ -599,7 +761,7 @@ levels:
               - title: "Web.dev Performance"
                 url: "https://web.dev/performance/"
                 type: "docs"
-          - name: "Testes frontend"
+          - name: "Testes"
             depth: "Aplica"
             expectation: "Testes unitários, de integração e E2E básicos."
             evidence:
@@ -628,6 +790,24 @@ levels:
             - "Definir padrões técnicos no escopo do time"
             - "Projetar features complexas end-to-end"
           tech:
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, estruturas de dados e padrões."
+              evidence:
+                - "Escreve código eficiente e bem estruturado"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "APIs REST"
+              depth: "Decide"
+              expectation: "Define padrões, contratos e estratégias de versionamento."
+              evidence:
+                - "Estabelece padrões de API que o time segue"
+              resources:
+                - title: "API Design"
+                  url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
             - name: "Banco de dados"
               depth: "Decide"
               expectation: "Índices, transações, otimização avançada e estratégias de modelagem."
@@ -638,7 +818,16 @@ levels:
                 - title: "Database Performance"
                   url: "https://use-the-index-luke.com/"
                   type: "artigo"
-            - name: "Arquitetura de APIs"
+            - name: "Testes"
+              depth: "Decide"
+              expectation: "Define estratégia de testes e padrões de cobertura."
+              evidence:
+                - "Estabelece estratégia de testes para o time"
+              resources:
+                - title: "Test Pyramid"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
+            - name: "Arquitetura"
               depth: "Decide"
               expectation: "Define padrões, contratos e estratégias de versionamento."
               evidence:
@@ -646,6 +835,15 @@ levels:
               resources:
                 - title: "API Design"
                   url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
+            - name: "Observabilidade"
+              depth: "Aplica"
+              expectation: "Logs estruturados, métricas e monitoramento."
+              evidence:
+                - "Instrumenta código com observabilidade adequada"
+              resources:
+                - title: "Observability 101"
+                  url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
                   type: "artigo"
             - name: "Performance e escalabilidade"
               depth: "Decide"
@@ -692,7 +890,7 @@ levels:
                 - title: "Design Systems"
                   url: "https://www.designsystems.com/"
                   type: "artigo"
-            - name: "Arquitetura de aplicação"
+            - name: "Arquitetura"
               depth: "Decide"
               expectation: "Estrutura escalável, padrões de estado, organização."
               evidence:
@@ -717,7 +915,43 @@ levels:
           - "Liderar incidentes e pós-mortems"
           - "Projetar sistemas centrais"
         tech:
-          - name: "Arquitetura distribuída"
+          - name: "Linguagem"
+            depth: "Aplica"
+            expectation: "Sintaxe avançada, padrões e otimizações."
+            evidence:
+              - "Escreve código eficiente e escalável"
+            resources:
+              - title: "Clean Code"
+                url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                type: "artigo"
+          - name: "APIs REST"
+            depth: "Decide"
+            expectation: "Define padrões avançados e estratégias de integração."
+            evidence:
+              - "Projeta APIs escaláveis e resilientes"
+            resources:
+              - title: "API Design"
+                url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                type: "artigo"
+          - name: "Banco de dados"
+            depth: "Decide"
+            expectation: "Otimização avançada, modelagem e estratégias de consistência."
+            evidence:
+              - "Projeta modelos de dados escaláveis"
+            resources:
+              - title: "Database Performance"
+                url: "https://use-the-index-luke.com/"
+                type: "artigo"
+          - name: "Testes"
+            depth: "Decide"
+            expectation: "Define estratégias de testes para sistemas complexos."
+            evidence:
+              - "Estabelece estratégia de testes robusta"
+            resources:
+              - title: "Test Pyramid"
+                url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                type: "artigo"
+          - name: "Arquitetura"
             depth: "Decide"
             expectation: "Event-driven, microservices, consistência e falhas."
             evidence:
@@ -726,6 +960,15 @@ levels:
               - title: "Microservices patterns"
                 url: "https://microservices.io/patterns/"
                 type: "docs"
+          - name: "Observabilidade"
+            depth: "Decide"
+            expectation: "Logs estruturados, métricas avançadas e monitoramento."
+            evidence:
+              - "Projeta sistemas observáveis e monitoráveis"
+            resources:
+              - title: "Observability 101"
+                url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                type: "artigo"
           - name: "Segurança"
             depth: "Aplica"
             expectation: "Ameaças comuns, hardening e boas práticas (OWASP)."
@@ -754,7 +997,52 @@ levels:
           - "Liderar migrações e refatorações grandes"
           - "Projetar frontend escalável"
         tech:
-          - name: "Arquitetura de sistemas frontend"
+          - name: "HTML/CSS"
+            depth: "Aplica"
+            expectation: "Estrutura semântica avançada, CSS moderno e acessibilidade."
+            evidence:
+              - "Cria layouts responsivos e acessíveis"
+            resources:
+              - title: "MDN Web Docs"
+                url: "https://developer.mozilla.org/"
+                type: "docs"
+          - name: "JavaScript"
+            depth: "Aplica"
+            expectation: "ES6+, async/await, módulos e padrões avançados."
+            evidence:
+              - "Usa recursos modernos do JavaScript efetivamente"
+            resources:
+              - title: "JavaScript.info"
+                url: "https://javascript.info/"
+                type: "docs"
+          - name: "Framework"
+            depth: "Decide"
+            expectation: "Define padrões de componentes e estrutura de projeto."
+            evidence:
+              - "Estabelece padrões de framework para o time"
+            resources:
+              - title: "React Documentation"
+                url: "https://react.dev/"
+                type: "docs"
+          - name: "State Management"
+            depth: "Decide"
+            expectation: "Define estratégias de gerenciamento de estado."
+            evidence:
+              - "Estabelece padrões de state management"
+            resources:
+              - title: "State Management"
+                url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                type: "artigo"
+          - name: "Testes"
+            depth: "Decide"
+            expectation: "Define estratégias de testes para frontend."
+            evidence:
+              - "Estabelece estratégia de testes para o time"
+            resources:
+              - title: "Testing Library"
+                url: "https://testing-library.com/"
+                type: "docs"
+          - name: "Arquitetura"
             depth: "Decide"
             expectation: "Micro-frontends, design systems e escalabilidade."
             evidence:
@@ -763,6 +1051,15 @@ levels:
               - title: "Micro Frontends"
                 url: "https://micro-frontends.org/"
                 type: "artigo"
+          - name: "Performance"
+            depth: "Decide"
+            expectation: "Otimização avançada, code splitting e lazy loading."
+            evidence:
+              - "Projeta aplicações performáticas em escala"
+            resources:
+              - title: "Web.dev Performance"
+                url: "https://web.dev/performance/"
+                type: "docs"
           - name: "Acessibilidade"
             depth: "Aplica"
             expectation: "WCAG, ARIA, testes com leitores de tela."
@@ -801,7 +1098,43 @@ levels:
             - "Projetar sistemas críticos e de alta escala"
             - "Liderar incidentes e pós-mortems"
           tech:
-            - name: "Arquitetura de plataforma"
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, padrões e otimizações."
+              evidence:
+                - "Escreve código eficiente e escalável"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "APIs REST"
+              depth: "Decide"
+              expectation: "Define padrões avançados e estratégias de integração."
+              evidence:
+                - "Projeta APIs escaláveis e resilientes"
+              resources:
+                - title: "API Design"
+                  url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
+            - name: "Banco de dados"
+              depth: "Decide"
+              expectation: "Otimização avançada, modelagem e estratégias de consistência."
+              evidence:
+                - "Projeta modelos de dados escaláveis"
+              resources:
+                - title: "Database Performance"
+                  url: "https://use-the-index-luke.com/"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Decide"
+              expectation: "Define estratégias de testes para sistemas complexos."
+              evidence:
+                - "Estabelece estratégia de testes robusta"
+              resources:
+                - title: "Test Pyramid"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
+            - name: "Arquitetura"
               depth: "Decide"
               expectation: "Plataformas internas, abstrações e ferramentas compartilhadas."
               evidence:
@@ -810,7 +1143,16 @@ levels:
                 - title: "Platform Engineering"
                   url: "https://platformengineering.org/"
                   type: "artigo"
-            - name: "Segurança avançada"
+            - name: "Observabilidade"
+              depth: "Decide"
+              expectation: "Logs estruturados, métricas avançadas e monitoramento."
+              evidence:
+                - "Projeta sistemas observáveis e monitoráveis"
+              resources:
+                - title: "Observability 101"
+                  url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                  type: "artigo"
+            - name: "Segurança"
               depth: "Decide"
               expectation: "Security by design, threat modeling, compliance."
               evidence:
@@ -819,7 +1161,7 @@ levels:
                 - title: "Security Engineering"
                   url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
                   type: "artigo"
-            - name: "Performance em escala"
+            - name: "Performance"
               depth: "Decide"
               expectation: "Otimização para milhões de usuários, caching avançado."
               evidence:
@@ -846,7 +1188,7 @@ levels:
             - "Projetar sistemas frontend de grande escala"
             - "Liderar transformações técnicas"
           tech:
-            - name: "Arquitetura de sistemas frontend"
+            - name: "Arquitetura"
               depth: "Decide"
               expectation: "Sistemas que suportam milhões de usuários, alta disponibilidade."
               evidence:
@@ -872,7 +1214,43 @@ levels:
           - "Definir arquitetura base"
           - "Criar padrões e frameworks internos"
         tech:
-          - name: "Arquitetura de plataforma"
+          - name: "Linguagem"
+            depth: "Decide"
+            expectation: "Define padrões de código e boas práticas organizacionais."
+            evidence:
+              - "Estabelece padrões de código para organização"
+            resources:
+              - title: "Clean Code"
+                url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                type: "artigo"
+          - name: "APIs REST"
+            depth: "Orienta"
+            expectation: "Define estratégias e padrões de API organizacionais."
+            evidence:
+              - "Orienta estratégia de APIs para organização"
+            resources:
+              - title: "API Design"
+                url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                type: "artigo"
+          - name: "Banco de dados"
+            depth: "Orienta"
+            expectation: "Define estratégias de dados e modelagem organizacional."
+            evidence:
+              - "Orienta estratégia de dados para organização"
+            resources:
+              - title: "Database Performance"
+                url: "https://use-the-index-luke.com/"
+                type: "artigo"
+          - name: "Testes"
+            depth: "Orienta"
+            expectation: "Define estratégias de testes organizacionais."
+            evidence:
+              - "Orienta estratégia de testes para organização"
+            resources:
+              - title: "Test Pyramid"
+                url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                type: "artigo"
+          - name: "Arquitetura"
             depth: "Orienta"
             expectation: "Define padrões e abstrações que reduzem custo organizacional."
             evidence:
@@ -880,6 +1258,24 @@ levels:
             resources:
               - title: "Staff Engineer archetypes"
                 url: "https://staffeng.com/guides/staff-archetypes"
+                type: "artigo"
+          - name: "Observabilidade"
+            depth: "Orienta"
+            expectation: "Define estratégias de observabilidade organizacional."
+            evidence:
+              - "Orienta estratégia de observabilidade para organização"
+            resources:
+              - title: "Observability 101"
+                url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                type: "artigo"
+          - name: "Segurança"
+            depth: "Orienta"
+            expectation: "Define estratégias de segurança organizacional."
+            evidence:
+              - "Orienta estratégia de segurança para organização"
+            resources:
+              - title: "Security Engineering"
+                url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
                 type: "artigo"
         soft:
           - name: "Estratégia técnica"

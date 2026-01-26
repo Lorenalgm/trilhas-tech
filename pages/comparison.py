@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_data
-from utils.helpers import sort_levels, by_name, diff_skills
+from utils.helpers import sort_levels, by_name, diff_skills, get_role_data
 from components.render import render_header, render_skill_compact
 from components.charts import create_radar_chart
 
@@ -37,14 +37,10 @@ def render():
         st.warning("Escolha cargos diferentes para comparar.")
         return
     
-    try:
-        a_data = DATA["contexts"][context]["data"][track].get(a, {})
-        b_data = DATA["contexts"][context]["data"][track].get(b, {})
-        if not a_data or not b_data:
-            st.error(f"Erro ao carregar dados para os níveis selecionados.")
-            st.stop()
-    except KeyError as e:
-        st.error(f"Erro ao acessar dados: {str(e)}")
+    a_data = get_role_data(DATA, a, context, track)
+    b_data = get_role_data(DATA, b, context, track)
+    if not a_data or not b_data:
+        st.error(f"Erro ao carregar dados para os níveis selecionados.")
         st.stop()
     
     a_tech = a_data.get("tech", [])

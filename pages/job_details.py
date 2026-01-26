@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_data
-from utils.helpers import sort_levels
+from utils.helpers import sort_levels, get_role_data
 from components.render import render_header, render_skill_compact
 
 
@@ -37,13 +37,9 @@ def render():
                 st.session_state.selected_level = next_level
                 st.rerun()
     
-    try:
-        role_data = DATA["contexts"][context]["data"][track].get(selected, {})
-        if not role_data:
-            st.error(f"Dados não encontrados para o nível: {selected}")
-            st.stop()
-    except KeyError:
-        st.error(f"Erro ao acessar dados para o nível: {selected}")
+    role_data = get_role_data(DATA, selected, context, track)
+    if not role_data:
+        st.error(f"Dados não encontrados para o nível: {selected}")
         st.stop()
     
     scope = role_data.get("scope", [])
@@ -54,7 +50,6 @@ def render():
         st.markdown("### Responsabilidades")
         for s in scope:
             st.markdown(f"• {s}")
-        st.markdown("</div>", unsafe_allow_html=True)
     
     tabs = st.tabs(["Competências técnicas", "Competências não técnicas"])
     

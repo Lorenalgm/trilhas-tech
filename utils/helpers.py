@@ -63,3 +63,47 @@ def diff_skills(a: List[Dict[str, Any]], b: List[Dict[str, Any]]) -> Tuple[Set[s
             deepen.add(name)
 
     return new, common, deepen
+
+
+def get_role_data(data: Dict[str, Any], level: str, context: str, track: str) -> Dict[str, Any]:
+    """
+    Get role data from the new YAML structure.
+    
+    Structure:
+    - levels.Estágio.early_stage.backend
+    - levels.Estágio.established.backend
+    - levels.Júnior.established."Júnior 1".backend (for numbered levels)
+    """
+    levels_data = data.get("levels", {})
+    
+    # Extract base level name (e.g., "Júnior" from "Júnior 1")
+    base_level_match = re.match(r'^(\w+)(?:\s+\d+)?$', level)
+    if base_level_match:
+        base_level = base_level_match.group(1)
+    else:
+        base_level = level
+    
+    # Check if base level exists
+    if base_level not in levels_data:
+        return {}
+    
+    level_data = levels_data[base_level]
+    
+    # Check if context exists
+    if context not in level_data:
+        return {}
+    
+    context_data = level_data[context]
+    
+    # Check if context_data has track directly (for simple levels like Estágio)
+    if track in context_data:
+        return context_data[track]
+    
+    # For established context with numbered sub-levels (Júnior 1, Júnior 2, etc.)
+    if context == "established" and level != base_level:
+        # Check if the exact level exists (e.g., "Júnior 1")
+        if level in context_data:
+            track_data = context_data[level].get(track, {})
+            return track_data
+    
+    return {}
