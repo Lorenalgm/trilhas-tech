@@ -1,4 +1,3 @@
-"""Chart components"""
 import plotly.graph_objects as go
 from typing import Dict, List, Any
 
@@ -11,8 +10,6 @@ def create_radar_chart(
     a_soft: List[Dict[str, Any]],
     b_soft: List[Dict[str, Any]],
 ):
-    """Create radar chart comparing two levels"""
-    # Group skills by category (simplified - can be enhanced)
     categories = {
         "Fundamentos": ["Linguagem", "Sintaxe", "Estruturas"],
         "APIs & Backend": ["API", "REST", "Endpoint", "Autenticação"],

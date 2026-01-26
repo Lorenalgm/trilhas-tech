@@ -1,4 +1,3 @@
-"""Comparison page"""
 import streamlit as st
 from utils.data_loader import load_data
 from utils.helpers import sort_levels, by_name, diff_skills
@@ -7,7 +6,6 @@ from components.charts import create_radar_chart
 
 
 def render():
-    """Render comparison page with side-by-side comparison"""
     DATA = load_data("data/sample.yml")
     
     context = st.session_state.selected_context or list(DATA["contexts"].keys())[0]
@@ -19,7 +17,6 @@ def render():
         "Compare duas posições para entender novas competências, aprofundamentos e diferenças.",
     )
     
-    # Level selection
     col1, col2 = st.columns(2, gap="large")
     with col1:
         current_idx = levels.index(st.session_state.current_level) if st.session_state.current_level and st.session_state.current_level in levels else 0
@@ -224,7 +221,6 @@ def render():
                 if skill_b:
                     render_skill_compact(skill_b, "deepen")
     
-    # Back button
     st.markdown("---")
     if st.button("← Voltar para Detalhes", use_container_width=True):
         st.session_state.current_page = "Detalhes"
