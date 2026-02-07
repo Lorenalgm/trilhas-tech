@@ -1,7 +1,22 @@
 import re
+import streamlit as st
 from typing import Dict, List, Any, Tuple, Set
 
 LEVEL_ORDER = ["Estágio", "Júnior", "Pleno", "Sênior", "Staff", "Líder", "Principal"]
+
+
+def init_session_state():
+    """Inicializa os valores do session_state se não existirem."""
+    if "selected_context" not in st.session_state:
+        st.session_state.selected_context = None
+    if "selected_track" not in st.session_state:
+        st.session_state.selected_track = None
+    if "selected_level" not in st.session_state:
+        st.session_state.selected_level = None
+    if "current_level" not in st.session_state:
+        st.session_state.current_level = None
+    if "target_level" not in st.session_state:
+        st.session_state.target_level = None
 
 
 def by_name(skills: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:

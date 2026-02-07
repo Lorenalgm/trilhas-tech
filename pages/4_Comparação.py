@@ -3,7 +3,7 @@ import pandas as pd
 from styles import get_css
 from components.sidebar import render_sidebar
 from utils.data_loader import load_data
-from utils.helpers import sort_levels, by_name, diff_skills, get_role_data
+from utils.helpers import sort_levels, by_name, diff_skills, get_role_data, init_session_state
 from components.render import render_header
 from components.charts import create_radar_chart
 
@@ -68,6 +68,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+init_session_state()
 
 st.markdown(get_css(), unsafe_allow_html=True)
 

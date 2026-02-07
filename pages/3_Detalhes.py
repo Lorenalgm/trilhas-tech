@@ -3,7 +3,7 @@ import pandas as pd
 from styles import get_css
 from components.sidebar import render_sidebar
 from utils.data_loader import load_data
-from utils.helpers import sort_levels, get_role_data
+from utils.helpers import sort_levels, get_role_data, init_session_state
 from components.render import render_header
 
 st.set_page_config(
@@ -12,6 +12,9 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# Inicializa os valores do session_state
+init_session_state()
 
 st.markdown(get_css(), unsafe_allow_html=True)
 
@@ -168,7 +171,7 @@ with tabs[0]:
         st.info("Nenhuma competência técnica definida para este nível.")
 
 with tabs[1]:
-    if soft:
+    if soft: 
         col1 = st.container()
         with col1:
             st.metric("Total", len(soft))

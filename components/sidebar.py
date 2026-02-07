@@ -1,9 +1,13 @@
 import streamlit as st
 from typing import Dict, Any
 from utils.data_loader import load_data
+from utils.helpers import init_session_state
 
 
 def render_sidebar():
+    # Garante que os valores do session_state estão inicializados
+    init_session_state()
+    
     DATA = load_data("data/sample.yml")
     
     with st.sidebar:

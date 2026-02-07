@@ -2,6 +2,7 @@ import streamlit as st
 from styles import get_css
 from components.sidebar import render_sidebar
 from components.render import render_header
+from utils.helpers import init_session_state
 
 st.set_page_config(
     page_title="Início - Trilha de carreira",
@@ -10,16 +11,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-if "selected_context" not in st.session_state:
-    st.session_state.selected_context = None
-if "selected_track" not in st.session_state:
-    st.session_state.selected_track = None
-if "selected_level" not in st.session_state:
-    st.session_state.selected_level = None
-if "current_level" not in st.session_state:
-    st.session_state.current_level = None
-if "target_level" not in st.session_state:
-    st.session_state.target_level = None
+# Inicializa os valores do session_state
+init_session_state()
 
 st.markdown(get_css(), unsafe_allow_html=True)
 
