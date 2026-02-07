@@ -114,10 +114,8 @@ tabs = st.tabs(["Competências técnicas", "Competências não técnicas"])
 
 with tabs[0]:
     if tech:
-        col1, col2 = st.columns([3, 1])
+        col1 = st.container()
         with col1:
-            st.markdown("#### Tabela de competências técnicas")
-        with col2:
             st.metric("Total", len(tech))
         
         st.caption("Visualize todas as competências na tabela interativa abaixo. Role para ver mais detalhes de cada uma.")
@@ -171,10 +169,8 @@ with tabs[0]:
 
 with tabs[1]:
     if soft:
-        col1, col2 = st.columns([3, 1])
+        col1 = st.container()
         with col1:
-            st.markdown("#### Tabela de competências não técnicas")
-        with col2:
             st.metric("Total", len(soft))
         
         st.caption("Visualize todas as competências na tabela interativa abaixo. Role para ver mais detalhes de cada uma.")
