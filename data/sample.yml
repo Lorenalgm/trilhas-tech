@@ -1,13 +1,13 @@
 contexts:
   early_stage:
-    name: "Early-stage Startup"
+    name: "Startup"
     description: "Ambiente de alta ambiguidade, times pequenos e foco em impacto rápido."
     levels:
       backend: ["Estágio", "Júnior", "Pleno", "Sênior", "Staff"]
       frontend: ["Estágio", "Júnior", "Pleno", "Sênior", "Staff"]
 
   established:
-    name: "Established Company"
+    name: "Empresa de grande porte"
     description: "Ambiente com escala, processos definidos e foco em sustentabilidade técnica."
     levels:
       backend: ["Estágio", "Júnior 1", "Júnior 2", "Júnior 3", "Pleno 1", "Pleno 2", "Pleno 3", "Sênior 1", "Sênior 2", "Sênior 3", "Staff"]
@@ -15,9 +15,9 @@ contexts:
 
 tracks:
   backend:
-    name: "Desenvolvimento Backend"
+    name: "Backend"
   frontend:
-    name: "Desenvolvimento Frontend"
+    name: "Frontend"
 
 levels:
   Estágio:
@@ -29,16 +29,25 @@ levels:
           - "Corrigir bugs simples e escrever código básico"
           - "Aprender a debugar via logs e stack traces"
         tips:
-          - "Priorize entender o fluxo ponta a ponta antes de otimizar."
+          - "Priorize entender o fluxo ponta a ponta antes de otimizar"
+          - "Faça perguntas quando estiver bloqueado - é melhor perguntar do que ficar preso"
+          - "Documente o que aprendeu para referência futura"
+          - "Teste seu código localmente antes de pedir review"
         tech:
           - name: "Linguagem"
             depth: "Conhece"
-            expectation: "Sintaxe, estruturas de dados básicas e leitura de código."
+            expectation: "Sintaxe, estruturas de dados básicas e leitura de código. Exemplos: Python, JavaScript, Java, Go, Ruby."
             evidence:
               - "Consegue implementar uma função simples e testá-la localmente"
             resources:
               - title: "Python Tutorial (oficial)"
                 url: "https://docs.python.org/3/tutorial/"
+                type: "docs"
+              - title: "JavaScript.info"
+                url: "https://javascript.info/"
+                type: "docs"
+              - title: "Go Tour"
+                url: "https://go.dev/tour/"
                 type: "docs"
           - name: "APIs REST"
             depth: "Conhece"
@@ -51,12 +60,18 @@ levels:
                 type: "artigo"
           - name: "Banco de dados"
             depth: "Conhece"
-            expectation: "CRUD, SELECT com filtros, JOIN simples."
+            expectation: "CRUD, SELECT com filtros, JOIN simples. Exemplos: PostgreSQL, MySQL, MongoDB, SQLite."
             evidence:
               - "Escreve queries básicas sem depender de ORM"
             resources:
               - title: "PostgreSQL Tutorial"
                 url: "https://www.postgresqltutorial.com/"
+                type: "docs"
+              - title: "MySQL Tutorial"
+                url: "https://dev.mysql.com/doc/"
+                type: "docs"
+              - title: "MongoDB University"
+                url: "https://university.mongodb.com/"
                 type: "docs"
         soft:
           - name: "Comunicação"
@@ -64,17 +79,36 @@ levels:
             expectation: "Faz perguntas objetivas e mantém status atualizado."
             evidence:
               - "Informa bloqueios cedo e com contexto"
+            resources:
+              - title: "How to Ask Good Questions"
+                url: "https://stackoverflow.com/help/how-to-ask"
+                type: "docs"
+              - title: "Technical Communication"
+                url: "https://www.oreilly.com/library/view/technical-communication/9780134677997/"
+                type: "artigo"
           - name: "Debugging"
             depth: "Conhece"
             expectation: "Usa logs e stack traces para isolar falhas."
             evidence:
               - "Consegue reproduzir e descrever um bug com passos claros"
+            resources:
+              - title: "Debugging Guide"
+                url: "https://www.freecodecamp.org/news/debugging-guide/"
+                type: "artigo"
+              - title: "Effective Debugging"
+                url: "https://www.oreilly.com/library/view/effective-debugging/9781491934813/"
+                type: "artigo"
 
       frontend:
         summary: "Primeiro contato com desenvolvimento frontend, foco em HTML, CSS e JavaScript básico."
         scope:
           - "Implementar componentes simples a partir de designs"
           - "Aprender a usar ferramentas de desenvolvimento do navegador"
+        tips:
+          - "Use as DevTools do navegador para debugar problemas visuais e de JavaScript"
+          - "Valide seu HTML/CSS com ferramentas de acessibilidade"
+          - "Teste em diferentes navegadores e dispositivos"
+          - "Peça feedback visual antes de considerar uma tarefa completa"
         tech:
           - name: "HTML/CSS"
             depth: "Conhece"
@@ -96,9 +130,10 @@ levels:
                 type: "docs"
           - name: "Versionamento"
             depth: "Conhece"
-            expectation: "Git básico: commit, push, pull e resolução de conflitos simples."
+            expectation: "Git básico: commit, push, pull, branches e resolução de conflitos simples."
             evidence:
               - "Faz commits descritivos e resolve conflitos básicos"
+              - "Trabalha com branches e pull requests"
             resources:
               - title: "Git Handbook"
                 url: "https://guides.github.com/introduction/git-handbook/"
@@ -109,11 +144,25 @@ levels:
             expectation: "Faz perguntas claras e pede ajuda quando necessário."
             evidence:
               - "Comunica bloqueios de forma objetiva"
+            resources:
+              - title: "How to Ask Good Questions"
+                url: "https://stackoverflow.com/help/how-to-ask"
+                type: "docs"
+              - title: "Technical Communication"
+                url: "https://www.oreilly.com/library/view/technical-communication/9780134677997/"
+                type: "artigo"
           - name: "Atenção aos detalhes"
             depth: "Conhece"
             expectation: "Segue especificações de design e identifica inconsistências visuais."
             evidence:
               - "Implementa designs com precisão visual"
+            resources:
+              - title: "Design Details"
+                url: "https://www.nngroup.com/articles/attention-to-detail/"
+                type: "artigo"
+              - title: "Pixel Perfect"
+                url: "https://www.smashingmagazine.com/2012/04/pixel-perfection-approach/"
+                type: "artigo"
 
     established:
       backend:
@@ -122,15 +171,26 @@ levels:
           - "Executar tarefas pequenas seguindo padrões existentes"
           - "Aprender fundamentos de programação e boas práticas"
           - "Trabalhar em tarefas pequenas com supervisão próxima"
+        tips:
+          - "Siga os padrões de código existentes no projeto"
+          - "Peça code review mesmo em mudanças pequenas"
+          - "Aprenda a usar o Git de forma colaborativa (branches, pull requests)"
+          - "Documente suas dúvidas e aprendizados"
         tech:
           - name: "Linguagem"
             depth: "Conhece"
-            expectation: "Sintaxe completa, estruturas de dados, orientação a objetos e padrões básicos."
+            expectation: "Sintaxe completa, estruturas de dados, orientação a objetos e padrões básicos. Exemplos: Python, Java, C#, TypeScript, Ruby."
             evidence:
               - "Escreve código limpo seguindo convenções da linguagem"
             resources:
               - title: "Clean Code"
                 url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                type: "artigo"
+              - title: "Effective Java"
+                url: "https://www.oreilly.com/library/view/effective-java/9780134686097/"
+                type: "artigo"
+              - title: "The Go Programming Language"
+                url: "https://www.gopl.io/"
                 type: "artigo"
           - name: "Algoritmos e estruturas de dados"
             depth: "Conhece"
@@ -143,9 +203,11 @@ levels:
                 type: "artigo"
           - name: "Git e versionamento"
             depth: "Aplica"
-            expectation: "Workflows, branching strategies e resolução de conflitos."
+            expectation: "Workflows, branching strategies, pull requests e resolução de conflitos."
             evidence:
               - "Usa Git de forma eficiente em projetos colaborativos"
+              - "Segue workflows estabelecidos pelo time"
+              - "Cria pull requests descritivos e bem documentados"
             resources:
               - title: "Atlassian Git Tutorials"
                 url: "https://www.atlassian.com/git/tutorials"
@@ -156,17 +218,36 @@ levels:
             expectation: "Documenta código, escreve PRs descritivos e comunica progresso."
             evidence:
               - "PRs claros e código bem documentado"
+            resources:
+              - title: "How to Write a Good Pull Request"
+                url: "https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/"
+                type: "artigo"
+              - title: "Technical Writing"
+                url: "https://developers.google.com/tech-writing"
+                type: "docs"
           - name: "Aprendizado contínuo"
             depth: "Aplica"
             expectation: "Busca ativamente conhecimento e aplica feedback."
             evidence:
               - "Demonstra crescimento constante e incorpora feedback"
+            resources:
+              - title: "The Developer's Guide to Learning"
+                url: "https://www.freecodecamp.org/news/how-to-learn-any-technology/"
+                type: "artigo"
+              - title: "Growth Mindset"
+                url: "https://www.mindsetworks.com/science/"
+                type: "artigo"
 
       frontend:
         summary: "Fundamentos sólidos de frontend com aprendizado estruturado."
         scope:
           - "Aprender HTML, CSS e JavaScript fundamentais"
           - "Trabalhar em componentes simples com supervisão"
+        tips:
+          - "Estude os componentes existentes antes de criar novos"
+          - "Mantenha componentes pequenos e focados em uma responsabilidade"
+          - "Use nomes descritivos para variáveis e funções"
+          - "Teste seus componentes em diferentes tamanhos de tela"
         tech:
           - name: "HTML/CSS"
             depth: "Conhece"
@@ -192,6 +273,13 @@ levels:
             expectation: "Implementa designs com precisão e identifica inconsistências."
             evidence:
               - "Código visualmente preciso e consistente"
+            resources:
+              - title: "Design Details"
+                url: "https://www.nngroup.com/articles/attention-to-detail/"
+                type: "artigo"
+              - title: "Pixel Perfect"
+                url: "https://www.smashingmagazine.com/2012/04/pixel-perfection-approach/"
+                type: "artigo"
 
   Júnior:
     early_stage:
@@ -200,6 +288,11 @@ levels:
         scope:
           - "Implementar endpoints e regras simples com testes básicos"
           - "Trabalhar com autenticação e validações"
+        tips:
+          - "Sempre valide dados de entrada, tanto no frontend quanto no backend"
+          - "Entenda os princípios de segurança antes de implementar autenticação"
+          - "Escreva testes para lógica de negócio crítica"
+          - "Documente decisões técnicas importantes"
         tech:
           - name: "Linguagem"
             depth: "Aplica"
@@ -221,36 +314,62 @@ levels:
                 type: "artigo"
           - name: "Banco de dados"
             depth: "Aplica"
-            expectation: "SQL intermediário, relacionamentos e queries eficientes."
+            expectation: "SQL intermediário, relacionamentos e queries eficientes. Exemplos: PostgreSQL, MySQL, MongoDB, Redis (cache)."
             evidence:
               - "Escreve queries otimizadas e entende relacionamentos"
             resources:
               - title: "SQL Tutorial"
                 url: "https://www.sql-tutorial.com/"
                 type: "docs"
+              - title: "PostgreSQL Performance"
+                url: "https://www.postgresql.org/docs/current/performance-tips.html"
+                type: "docs"
+              - title: "MongoDB Performance"
+                url: "https://docs.mongodb.com/manual/administration/analyzing-mongodb-performance/"
+                type: "docs"
           - name: "Framework"
             depth: "Aplica"
-            expectation: "Rotas, middlewares, validação e estrutura de projeto."
+            expectation: "Rotas, middlewares, validação e estrutura de projeto. Exemplos: Express (Node.js), Django/Flask (Python), Spring (Java), Gin (Go), Rails (Ruby)."
             evidence:
               - "Sobe uma API simples com boas práticas mínimas"
             resources:
               - title: "Express Routing"
                 url: "https://expressjs.com/en/guide/routing.html"
                 type: "docs"
-          - name: "Autenticação"
+              - title: "Django Documentation"
+                url: "https://docs.djangoproject.com/"
+                type: "docs"
+              - title: "Spring Framework"
+                url: "https://spring.io/guides"
+                type: "docs"
+          - name: "Autenticação e segurança"
             depth: "Aplica"
-            expectation: "JWT, hashing de senha e noções de sessão."
+            expectation: "JWT, hashing de senha, noções de sessão e princípios básicos de segurança."
             evidence:
               - "Implementa login com JWT e validação"
+              - "Aplica hashing seguro de senhas"
+              - "Entende princípios básicos de segurança (OWASP Top 10)"
             resources:
               - title: "JWT Introduction"
                 url: "https://jwt.io/introduction"
                 type: "docs"
           - name: "Testes"
             depth: "Aplica"
-            expectation: "Testes unitários simples e noções de mocking."
+            expectation: "Testes unitários, noções de mocking e TDD básico. Exemplos: pytest, Jest, JUnit, Go testing, RSpec."
             evidence:
               - "Cobre regras críticas com testes unitários"
+              - "Usa mocking para isolar dependências"
+              - "Escreve testes legíveis e manuteníveis"
+            resources:
+              - title: "Test-Driven Development"
+                url: "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
+                type: "artigo"
+              - title: "pytest Documentation"
+                url: "https://docs.pytest.org/"
+                type: "docs"
+              - title: "Jest Documentation"
+                url: "https://jestjs.io/docs/getting-started"
+                type: "docs"
             resources:
               - title: "Test-Driven Development"
                 url: "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
@@ -261,17 +380,36 @@ levels:
             expectation: "Toca tarefas com pouca supervisão e comunica riscos."
             evidence:
               - "Quebra a tarefa em etapas e executa com previsibilidade"
+            resources:
+              - title: "Working Independently"
+                url: "https://www.atlassian.com/blog/teamwork/working-independently"
+                type: "artigo"
+              - title: "Task Breakdown"
+                url: "https://www.projectmanager.com/blog/work-breakdown-structure"
+                type: "artigo"
           - name: "Documentação"
             depth: "Conhece"
             expectation: "README, exemplos de uso e contrato básico da API."
             evidence:
               - "Documenta endpoint com exemplo de request/response"
+            resources:
+              - title: "Writing Great Documentation"
+                url: "https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/"
+                type: "artigo"
+              - title: "API Documentation Best Practices"
+                url: "https://swagger.io/resources/articles/adopting-an-api-first-approach/"
+                type: "artigo"
 
       frontend:
         summary: "Desenvolve features frontend com frameworks modernos e boas práticas."
         scope:
           - "Implementar componentes reutilizáveis"
           - "Integrar com APIs e gerenciar estado básico"
+        tips:
+          - "Trate erros de API de forma adequada e forneça feedback ao usuário"
+          - "Use loading states para melhorar a experiência do usuário"
+          - "Mantenha o estado o mais próximo possível de onde é usado"
+          - "Evite prop drilling excessivo - considere Context API quando necessário"
         tech:
           - name: "HTML/CSS"
             depth: "Aplica"
@@ -302,9 +440,11 @@ levels:
                 type: "docs"
           - name: "State Management"
             depth: "Aplica"
-            expectation: "Estado local, props drilling e hooks básicos."
+            expectation: "Estado local, props drilling, hooks básicos e Context API quando necessário."
             evidence:
               - "Gerencia estado de componentes sem bibliotecas externas"
+              - "Usa Context API para evitar prop drilling excessivo"
+              - "Entende quando usar estado local vs global"
             resources:
               - title: "React State Management"
                 url: "https://react.dev/learn/managing-state"
@@ -324,11 +464,25 @@ levels:
             expectation: "Entrega features pequenas com pouca supervisão."
             evidence:
               - "Quebra tarefas em etapas e executa com previsibilidade"
+            resources:
+              - title: "Working Independently"
+                url: "https://www.atlassian.com/blog/teamwork/working-independently"
+                type: "artigo"
+              - title: "Task Breakdown"
+                url: "https://www.projectmanager.com/blog/work-breakdown-structure"
+                type: "artigo"
           - name: "Code review"
             depth: "Conhece"
             expectation: "Revisa código de pares e incorpora feedback."
             evidence:
               - "Faz reviews construtivos e aplica feedback recebido"
+            resources:
+              - title: "How to Make Good Code Reviews Better"
+                url: "https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/"
+                type: "artigo"
+              - title: "Code Review Guidelines"
+                url: "https://google.github.io/eng-practices/review/"
+                type: "docs"
 
     established:
       "Júnior 1":
@@ -337,6 +491,11 @@ levels:
           scope:
             - "Implementar endpoints REST simples"
             - "Escrever testes unitários básicos"
+          tips:
+            - "Escreva testes que validem comportamento, não implementação"
+            - "Comece testando casos de sucesso, depois casos de erro"
+            - "Mantenha testes simples e legíveis"
+            - "Use nomes descritivos para seus testes"
           tech:
             - name: "Linguagem"
               depth: "Aplica"
@@ -358,13 +517,19 @@ levels:
                   type: "artigo"
             - name: "Framework"
               depth: "Aplica"
-              expectation: "Rotas, controllers, middlewares e estrutura de projeto."
+              expectation: "Rotas, controllers, middlewares e estrutura de projeto. Exemplos: Express, Django, Spring Boot, ASP.NET Core, Gin."
               evidence:
                 - "Implementa endpoints seguindo padrões do framework"
               resources:
                 - title: "Framework Best Practices"
                   url: "https://www.freecodecamp.org/news/rest-api-design-best-practices/"
                   type: "artigo"
+                - title: "Django Best Practices"
+                  url: "https://docs.djangoproject.com/en/stable/misc/design-philosophies/"
+                  type: "docs"
+                - title: "Spring Boot Guides"
+                  url: "https://spring.io/guides"
+                  type: "docs"
             - name: "Banco de dados"
               depth: "Aplica"
               expectation: "SQL intermediário, relacionamentos e transações básicas."
@@ -376,9 +541,21 @@ levels:
                   type: "docs"
             - name: "Testes"
               depth: "Aplica"
-              expectation: "JUnit/pytest, mocking básico e cobertura mínima."
+              expectation: "Frameworks de teste, mocking básico, cobertura mínima e testes de integração simples. Exemplos: JUnit (Java), pytest (Python), Jest (Node.js), Go testing, RSpec (Ruby)."
               evidence:
                 - "Cobre lógica de negócio com testes unitários"
+                - "Escreve testes de integração para fluxos críticos"
+                - "Usa mocking para isolar dependências externas"
+              resources:
+                - title: "Test-Driven Development"
+                  url: "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
+                  type: "artigo"
+                - title: "pytest Documentation"
+                  url: "https://docs.pytest.org/"
+                  type: "docs"
+                - title: "Jest Documentation"
+                  url: "https://jestjs.io/docs/getting-started"
+                  type: "docs"
               resources:
                 - title: "Test-Driven Development"
                   url: "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
@@ -389,17 +566,36 @@ levels:
               expectation: "Completa tarefas com orientação mínima."
               evidence:
                 - "Entrega features pequenas sem supervisão constante"
+              resources:
+                - title: "Working Independently"
+                  url: "https://www.atlassian.com/blog/teamwork/working-independently"
+                  type: "artigo"
+                - title: "Task Breakdown"
+                  url: "https://www.projectmanager.com/blog/work-breakdown-structure"
+                  type: "artigo"
             - name: "Code review"
               depth: "Aplica"
               expectation: "Revisa código de pares e incorpora feedback."
               evidence:
                 - "Faz reviews construtivos e aplica sugestões"
+              resources:
+                - title: "How to Make Good Code Reviews Better"
+                  url: "https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/"
+                  type: "artigo"
+                - title: "Code Review Guidelines"
+                  url: "https://google.github.io/eng-practices/review/"
+                  type: "docs"
 
         frontend:
           summary: "Primeiro nível júnior: desenvolve features com frameworks modernos."
           scope:
             - "Implementar componentes React/Vue/Angular"
             - "Integrar com APIs REST"
+          tips:
+            - "Trate todos os possíveis estados da requisição (loading, success, error)"
+            - "Use TypeScript ou PropTypes para validar dados da API"
+            - "Implemente retry logic para requisições críticas"
+            - "Cache dados quando apropriado para melhorar performance"
           tech:
             - name: "Framework"
               depth: "Aplica"
@@ -425,6 +621,13 @@ levels:
               expectation: "Entrega features com orientação mínima."
               evidence:
                 - "Features entregues com qualidade e pouca supervisão"
+              resources:
+                - title: "Working Independently"
+                  url: "https://www.atlassian.com/blog/teamwork/working-independently"
+                  type: "artigo"
+                - title: "Task Breakdown"
+                  url: "https://www.projectmanager.com/blog/work-breakdown-structure"
+                  type: "artigo"
 
       "Júnior 2":
         backend:
@@ -432,6 +635,11 @@ levels:
           scope:
             - "Implementar features com múltiplas integrações"
             - "Otimizar queries e performance básica"
+          tips:
+            - "Use EXPLAIN ANALYZE para entender performance de queries"
+            - "Aprenda a identificar N+1 queries e como resolvê-las"
+            - "Considere índices quando queries ficarem lentas"
+            - "Monitore métricas de performance regularmente"
           tech:
             - name: "Linguagem"
               depth: "Aplica"
@@ -471,38 +679,66 @@ levels:
                 - title: "Integration Testing"
                   url: "https://martinfowler.com/articles/practical-test-pyramid.html"
                   type: "artigo"
+          tips:
+            - "Use EXPLAIN ANALYZE para entender performance de queries"
+            - "Aprenda a identificar N+1 queries e como resolvê-las"
+            - "Considere índices quando queries ficarem lentas"
+            - "Monitore métricas de performance regularmente"
           soft:
             - name: "Proatividade"
               depth: "Aplica"
               expectation: "Identifica melhorias e propõe soluções."
               evidence:
                 - "Sugere melhorias técnicas e de processo"
+              resources:
+                - title: "Being Proactive at Work"
+                  url: "https://www.indeed.com/career-advice/career-development/how-to-be-proactive"
+                  type: "artigo"
+                - title: "Initiative and Proactivity"
+                  url: "https://hbr.org/2018/01/how-to-be-more-proactive-and-less-reactive"
+                  type: "artigo"
             - name: "Mentoria básica"
               depth: "Conhece"
               expectation: "Ajuda estagiários e novos membros do time."
               evidence:
                 - "Compartilha conhecimento com colegas menos experientes"
+              resources:
+                - title: "How to Be a Good Mentor"
+                  url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                  type: "artigo"
+                - title: "Mentoring Best Practices"
+                  url: "https://www.atlassian.com/blog/leadership/mentoring-best-practices"
+                  type: "artigo"
 
         frontend:
           summary: "Júnior intermediário: aumenta complexidade e qualidade."
           scope:
             - "Implementar features complexas com múltiplos componentes"
             - "Otimizar performance básica"
+          tips:
+            - "Use React DevTools Profiler para identificar componentes lentos"
+            - "Implemente lazy loading para rotas e componentes pesados"
+            - "Otimize imagens e assets antes de fazer deploy"
+            - "Monitore Core Web Vitals regularmente"
           tech:
             - name: "Performance"
               depth: "Aplica"
-              expectation: "Code splitting, lazy loading, memoização básica."
+              expectation: "Code splitting, lazy loading, memoização básica e otimização de bundle."
               evidence:
                 - "Aplicações performáticas e otimizadas"
+                - "Implementa lazy loading para rotas e componentes pesados"
+                - "Otimiza bundle size e reduz tempo de carregamento"
               resources:
                 - title: "Web Performance"
                   url: "https://web.dev/performance/"
                   type: "docs"
             - name: "Testes"
               depth: "Aplica"
-              expectation: "Testing Library, testes unitários e de integração."
+              expectation: "Testing Library, testes unitários, de integração e E2E básicos."
               evidence:
                 - "Cobertura de testes adequada para componentes críticos"
+                - "Escreve testes que validam comportamento do usuário"
+                - "Usa testes E2E para fluxos críticos da aplicação"
               resources:
                 - title: "Testing Library"
                   url: "https://testing-library.com/"
@@ -513,6 +749,13 @@ levels:
               expectation: "Identifica e propõe melhorias."
               evidence:
                 - "Sugestões técnicas que melhoram produto"
+              resources:
+                - title: "Being Proactive at Work"
+                  url: "https://www.indeed.com/career-advice/career-development/how-to-be-proactive"
+                  type: "artigo"
+                - title: "Initiative and Proactivity"
+                  url: "https://hbr.org/2018/01/how-to-be-more-proactive-and-less-reactive"
+                  type: "artigo"
 
       "Júnior 3":
         backend:
@@ -577,24 +820,45 @@ levels:
                   type: "artigo"
             - name: "Observabilidade"
               depth: "Aplica"
-              expectation: "Logs estruturados, métricas básicas e monitoramento."
+              expectation: "Logs estruturados, métricas básicas, monitoramento e alertas simples."
               evidence:
                 - "Instrumenta código com logs e métricas úteis"
+                - "Cria alertas básicos para problemas críticos"
+                - "Usa ferramentas de observabilidade para debugar problemas"
               resources:
                 - title: "Observability 101"
                   url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
                   type: "artigo"
+          tips:
+            - "Documente decisões arquiteturais com ADRs (Architecture Decision Records)"
+            - "Considere trade-offs entre simplicidade e flexibilidade"
+            - "Peça feedback de pessoas mais experientes antes de grandes mudanças"
+            - "Pense em como sua solução será mantida no futuro"
           soft:
             - name: "Tomada de decisão"
               depth: "Aplica"
               expectation: "Avalia opções e escolhe soluções adequadas."
               evidence:
                 - "Documenta decisões técnicas com trade-offs"
+              resources:
+                - title: "Decision Making Framework"
+                  url: "https://hbr.org/2020/01/a-better-way-to-make-decisions"
+                  type: "artigo"
+                - title: "Architecture Decision Records"
+                  url: "https://adr.github.io/"
+                  type: "docs"
             - name: "Influência técnica"
               depth: "Conhece"
               expectation: "Contribui para discussões técnicas do time."
               evidence:
                 - "Participa ativamente de discussões arquiteturais"
+              resources:
+                - title: "Technical Influence"
+                  url: "https://www.oreilly.com/library/view/the-managers-path/9781491973882/"
+                  type: "artigo"
+                - title: "Influencing Without Authority"
+                  url: "https://hbr.org/2018/11/influencing-without-authority"
+                  type: "artigo"
 
         frontend:
           summary: "Júnior avançado: preparação para pleno."
@@ -620,12 +884,24 @@ levels:
                 - title: "A11y Project"
                   url: "https://www.a11yproject.com/"
                   type: "docs"
+          tips:
+            - "Estabeleça padrões de código que facilitem manutenção"
+            - "Crie documentação clara para componentes reutilizáveis"
+            - "Considere acessibilidade desde o início do desenvolvimento"
+            - "Teste com leitores de tela para garantir acessibilidade"
           soft:
             - name: "Mentoria básica"
               depth: "Aplica"
               expectation: "Ajuda desenvolvedores menos experientes."
               evidence:
                 - "Compartilha conhecimento e desenvolve outros"
+              resources:
+                - title: "How to Be a Good Mentor"
+                  url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                  type: "artigo"
+                - title: "Mentoring Best Practices"
+                  url: "https://www.atlassian.com/blog/leadership/mentoring-best-practices"
+                  type: "artigo"
 
   Pleno:
     early_stage:
@@ -636,6 +912,11 @@ levels:
           - "Trabalhar performance e observabilidade no dia a dia"
           - "Projetar e implementar features médias"
           - "Assumir ownership de partes do sistema"
+        tips:
+          - "Pense em observabilidade desde o início - logs e métricas são essenciais"
+          - "Estabeleça padrões de API que facilitem evolução sem breaking changes"
+          - "Documente decisões técnicas importantes para o time"
+          - "Mentore desenvolvedores júnior - ensinar ajuda a consolidar conhecimento"
         tech:
           - name: "Linguagem"
             depth: "Aplica"
@@ -685,20 +966,36 @@ levels:
                 type: "artigo"
           - name: "Observabilidade"
             depth: "Aplica"
-            expectation: "Logs estruturados, métricas e alertas básicos."
+            expectation: "Logs estruturados, métricas, alertas e dashboards básicos."
             evidence:
               - "Cria dashboard simples e alerta útil"
+              - "Instrumenta código com observabilidade adequada"
+              - "Usa métricas para tomar decisões técnicas"
         soft:
           - name: "Mentoria"
             depth: "Aplica"
             expectation: "Ajuda pessoas menos experientes a destravar e melhorar qualidade."
             evidence:
               - "Faz pairing e reviews com feedback acionável"
+            resources:
+              - title: "How to Be a Good Mentor"
+                url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                type: "artigo"
+              - title: "Pair Programming Guide"
+                url: "https://martinfowler.com/articles/on-pair-programming.html"
+                type: "artigo"
           - name: "Tomada de decisão"
             depth: "Decide"
             expectation: "Explicita trade-offs e escolhe solução adequada ao contexto."
             evidence:
               - "Registra decisão (ex: ADR simples) quando necessário"
+            resources:
+              - title: "Architecture Decision Records"
+                url: "https://adr.github.io/"
+                type: "docs"
+              - title: "Decision Making Framework"
+                url: "https://hbr.org/2020/01/a-better-way-to-make-decisions"
+                type: "artigo"
 
       frontend:
         summary: "Define padrões de código, otimiza performance e guia decisões técnicas no time."
@@ -706,6 +1003,11 @@ levels:
           - "Estabelecer padrões de arquitetura frontend"
           - "Otimizar performance e acessibilidade"
           - "Arquitetar features complexas"
+        tips:
+          - "Pense em performance desde o design - otimizações tardias são caras"
+          - "Estabeleça padrões de componentes que facilitem reutilização"
+          - "Considere acessibilidade como requisito, não como opção"
+          - "Documente padrões arquiteturais para o time seguir"
         tech:
           - name: "HTML/CSS"
             depth: "Aplica"
@@ -776,11 +1078,25 @@ levels:
             expectation: "Ajuda desenvolvedores júnior a crescer."
             evidence:
               - "Faz pairing e compartilha conhecimento"
+            resources:
+              - title: "How to Be a Good Mentor"
+                url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                type: "artigo"
+              - title: "Pair Programming Guide"
+                url: "https://martinfowler.com/articles/on-pair-programming.html"
+                type: "artigo"
           - name: "Tomada de decisão técnica"
             depth: "Decide"
             expectation: "Avalia trade-offs de bibliotecas e abordagens."
             evidence:
               - "Documenta decisões técnicas com contexto"
+            resources:
+              - title: "Architecture Decision Records"
+                url: "https://adr.github.io/"
+                type: "docs"
+              - title: "Decision Making Framework"
+                url: "https://hbr.org/2020/01/a-better-way-to-make-decisions"
+                type: "artigo"
 
     established:
       "Pleno 1":
@@ -789,6 +1105,11 @@ levels:
           scope:
             - "Definir padrões técnicos no escopo do time"
             - "Projetar features complexas end-to-end"
+          tips:
+            - "Pense em segurança desde o design - security by design"
+            - "Considere escalabilidade desde o início, mesmo que não seja necessária agora"
+            - "Documente decisões técnicas com ADRs claros"
+            - "Mentore desenvolvedores júnior de forma estruturada"
           tech:
             - name: "Linguagem"
               depth: "Aplica"
@@ -869,18 +1190,94 @@ levels:
               expectation: "Mentora desenvolvedores júnior de forma estruturada."
               evidence:
                 - "Plano de mentoria e acompanhamento regular"
+              resources:
+                - title: "Structured Mentoring Programs"
+                  url: "https://www.atlassian.com/blog/leadership/mentoring-best-practices"
+                  type: "artigo"
+                - title: "Mentoring Framework"
+                  url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                  type: "artigo"
             - name: "Comunicação técnica"
               depth: "Aplica"
               expectation: "Escreve ADRs, documenta decisões e comunica mudanças."
               evidence:
                 - "ADRs claros e comunicação efetiva de mudanças"
+              resources:
+                - title: "Architecture Decision Records"
+                  url: "https://adr.github.io/"
+                  type: "docs"
+                - title: "Technical Writing"
+                  url: "https://developers.google.com/tech-writing"
+                  type: "docs"
 
         frontend:
           summary: "Pleno inicial: define padrões e arquitetura frontend."
           scope:
             - "Estabelecer padrões técnicos do time"
             - "Projetar features complexas"
+          tips:
+            - "Crie design systems que facilitem consistência e velocidade"
+            - "Pense em como diferentes times vão usar seus componentes"
+            - "Documente padrões de uso e boas práticas"
+            - "Mentore desenvolvedores de forma que eles cresçam independentemente"
           tech:
+            - name: "Framework"
+              depth: "Decide"
+              expectation: "Define padrões de componentes e estrutura de projeto."
+              evidence:
+                - "Estabelece padrões de framework para o time"
+              resources:
+                - title: "React Documentation"
+                  url: "https://react.dev/"
+                  type: "docs"
+                - title: "Vue.js Guide"
+                  url: "https://vuejs.org/guide/"
+                  type: "docs"
+            - name: "State Management"
+              depth: "Decide"
+              expectation: "Define estratégias de gerenciamento de estado."
+              evidence:
+                - "Estabelece padrões de state management"
+              resources:
+                - title: "State Management"
+                  url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Decide"
+              expectation: "Estrutura de pastas, padrões de componentes e organização de código."
+              evidence:
+                - "Propõe e implementa estrutura de projeto escalável"
+              resources:
+                - title: "Frontend Architecture"
+                  url: "https://kentcdodds.com/blog/colocation"
+                  type: "artigo"
+            - name: "Performance"
+              depth: "Decide"
+              expectation: "Code splitting, lazy loading, otimização de bundle e renderização."
+              evidence:
+                - "Diagnostica e resolve problemas de performance"
+              resources:
+                - title: "Web.dev Performance"
+                  url: "https://web.dev/performance/"
+                  type: "docs"
+            - name: "Acessibilidade"
+              depth: "Aplica"
+              expectation: "WCAG, ARIA, testes com leitores de tela."
+              evidence:
+                - "Garante aplicações acessíveis e inclusivas"
+              resources:
+                - title: "WebAIM"
+                  url: "https://webaim.org/"
+                  type: "docs"
+            - name: "Testes"
+              depth: "Aplica"
+              expectation: "Testes unitários, de integração e E2E básicos."
+              evidence:
+                - "Cobre componentes críticos com testes"
+              resources:
+                - title: "Testing Library"
+                  url: "https://testing-library.com/"
+                  type: "docs"
             - name: "Design systems"
               depth: "Decide"
               expectation: "Cria e mantém design system, componentes reutilizáveis."
@@ -890,21 +1287,476 @@ levels:
                 - title: "Design Systems"
                   url: "https://www.designsystems.com/"
                   type: "artigo"
-            - name: "Arquitetura"
-              depth: "Decide"
-              expectation: "Estrutura escalável, padrões de estado, organização."
-              evidence:
-                - "Arquitetura que suporta crescimento"
-              resources:
-                - title: "Frontend Architecture Patterns"
-                  url: "https://www.patterns.dev/"
-                  type: "artigo"
           soft:
             - name: "Mentoria"
               depth: "Aplica"
               expectation: "Mentora desenvolvedores de forma estruturada."
               evidence:
                 - "Plano de desenvolvimento para mentees"
+              resources:
+                - title: "Structured Mentoring Programs"
+                  url: "https://www.atlassian.com/blog/leadership/mentoring-best-practices"
+                  type: "artigo"
+                - title: "Mentoring Framework"
+                  url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                  type: "artigo"
+
+      "Pleno 2":
+        backend:
+          summary: "Pleno intermediário: aumenta complexidade e escala das responsabilidades técnicas."
+          scope:
+            - "Definir padrões técnicos que impactam múltiplos times"
+            - "Projetar sistemas complexos considerando escalabilidade e resiliência"
+            - "Liderar iniciativas técnicas de médio porte (refatorações, migrações)"
+            - "Estabelecer estratégias de observabilidade, segurança e performance"
+            - "Mentorar desenvolvedores pleno e júnior de forma estruturada"
+            - "Influenciar decisões arquiteturais além do escopo do time"
+          tips:
+            - "Pense em sistemas distribuídos e arquiteturas resilientes"
+            - "Estabeleça padrões que facilitem evolução sem breaking changes"
+            - "Crie abstrações que simplifiquem trabalho de múltiplos times"
+            - "Documente decisões arquiteturais complexas com ADRs detalhados"
+          tech:
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, padrões e otimizações. Exemplos: Python, Java, Go, TypeScript, C#, Rust."
+              evidence:
+                - "Escreve código eficiente e escalável"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "Framework"
+              depth: "Decide"
+              expectation: "Define padrões de framework e estrutura de projeto. Exemplos: Express, Django, Spring Boot, ASP.NET Core, Gin."
+              evidence:
+                - "Estabelece padrões de framework para múltiplos times"
+              resources:
+                - title: "Framework Best Practices"
+                  url: "https://www.freecodecamp.org/news/rest-api-design-best-practices/"
+                  type: "artigo"
+                - title: "Django Best Practices"
+                  url: "https://docs.djangoproject.com/en/stable/misc/design-philosophies/"
+                  type: "docs"
+            - name: "APIs REST"
+              depth: "Decide"
+              expectation: "Define padrões avançados, estratégias de integração e versionamento."
+              evidence:
+                - "Projeta APIs escaláveis e resilientes para múltiplos times"
+              resources:
+                - title: "API Design"
+                  url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
+            - name: "Banco de dados"
+              depth: "Decide"
+              expectation: "Otimização avançada, modelagem distribuída, estratégias de consistência."
+              evidence:
+                - "Projeta modelos de dados escaláveis e distribuídos"
+              resources:
+                - title: "Database Performance"
+                  url: "https://use-the-index-luke.com/"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Decide"
+              expectation: "Define estratégias de testes para sistemas distribuídos e complexos."
+              evidence:
+                - "Estabelece estratégia de testes robusta para sistemas complexos"
+              resources:
+                - title: "Test Pyramid"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Decide"
+              expectation: "Sistemas distribuídos, microservices, event-driven architecture."
+              evidence:
+                - "Projeta arquiteturas distribuídas e resilientes"
+              resources:
+                - title: "Microservices patterns"
+                  url: "https://microservices.io/patterns/"
+                  type: "docs"
+            - name: "Observabilidade"
+              depth: "Decide"
+              expectation: "Logs estruturados, métricas avançadas, tracing distribuído."
+              evidence:
+                - "Projeta sistemas observáveis em escala"
+              resources:
+                - title: "Observability 101"
+                  url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                  type: "artigo"
+            - name: "Performance e escalabilidade"
+              depth: "Decide"
+              expectation: "Otimização para alta escala, caching avançado, load balancing."
+              evidence:
+                - "Projeta sistemas que performam em alta escala"
+              resources:
+                - title: "Scalability Patterns"
+                  url: "https://www.oreilly.com/library/view/building-microservices/9781491950340/"
+                  type: "artigo"
+            - name: "Segurança"
+              depth: "Decide"
+              expectation: "Security by design, threat modeling, compliance."
+              evidence:
+                - "Integra segurança desde o design do sistema"
+              resources:
+                - title: "Security Engineering"
+                  url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
+                  type: "artigo"
+          soft:
+            - name: "Liderança técnica"
+              depth: "Orienta"
+              expectation: "Influencia decisões arquiteturais em múltiplos times."
+              evidence:
+                - "Conduz discussões técnicas e resolve conflitos de abordagem"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Influencing Without Authority"
+                  url: "https://hbr.org/2018/11/influencing-without-authority"
+                  type: "artigo"
+            - name: "Mentoria"
+              depth: "Aplica"
+              expectation: "Mentora desenvolvedores pleno e júnior de forma estruturada."
+              evidence:
+                - "Plano de mentoria e desenvolvimento para múltiplos mentees"
+              resources:
+                - title: "Structured Mentoring Programs"
+                  url: "https://www.atlassian.com/blog/leadership/mentoring-best-practices"
+                  type: "artigo"
+                - title: "Mentoring Framework"
+                  url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                  type: "artigo"
+
+        frontend:
+          summary: "Pleno intermediário: aumenta complexidade e escala das responsabilidades."
+          scope:
+            - "Definir padrões técnicos que impactam múltiplos times"
+            - "Projetar sistemas frontend complexos e escaláveis"
+            - "Liderar iniciativas técnicas de médio porte (migrações, refatorações)"
+            - "Estabelecer estratégias de performance, acessibilidade e SEO em escala"
+            - "Mentorar desenvolvedores pleno e júnior de forma estruturada"
+            - "Influenciar decisões arquiteturais além do escopo do time"
+          tips:
+            - "Pense em arquiteturas que suportam múltiplos times e features"
+            - "Estabeleça padrões de design system que facilitem consistência"
+            - "Crie abstrações e plataformas que acelerem desenvolvimento"
+            - "Documente decisões arquiteturais complexas com ADRs detalhados"
+          tech:
+            - name: "Framework"
+              depth: "Decide"
+              expectation: "Define padrões de componentes e estrutura de projeto."
+              evidence:
+                - "Estabelece padrões de framework para múltiplos times"
+              resources:
+                - title: "React Documentation"
+                  url: "https://react.dev/"
+                  type: "docs"
+                - title: "Vue.js Guide"
+                  url: "https://vuejs.org/guide/"
+                  type: "docs"
+            - name: "State Management"
+              depth: "Decide"
+              expectation: "Define estratégias de gerenciamento de estado."
+              evidence:
+                - "Estabelece padrões de state management para múltiplos times"
+              resources:
+                - title: "State Management"
+                  url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Decide"
+              expectation: "Micro-frontends, design systems escaláveis, arquitetura modular."
+              evidence:
+                - "Projeta arquiteturas frontend escaláveis e resilientes"
+              resources:
+                - title: "Micro Frontends"
+                  url: "https://micro-frontends.org/"
+                  type: "artigo"
+            - name: "Performance"
+              depth: "Decide"
+              expectation: "Otimização avançada, code splitting, lazy loading, Core Web Vitals."
+              evidence:
+                - "Projeta aplicações performáticas em escala"
+              resources:
+                - title: "Web.dev Performance"
+                  url: "https://web.dev/performance/"
+                  type: "docs"
+            - name: "Design systems"
+              depth: "Decide"
+              expectation: "Cria e mantém design system usado por múltiplos times."
+              evidence:
+                - "Design system escalável usado por toda organização"
+              resources:
+                - title: "Design Systems"
+                  url: "https://www.designsystems.com/"
+                  type: "artigo"
+            - name: "Acessibilidade"
+              depth: "Decide"
+              expectation: "WCAG, ARIA, testes com leitores de tela, padrões de acessibilidade."
+              evidence:
+                - "Garante aplicações acessíveis e inclusivas em escala"
+              resources:
+                - title: "WebAIM"
+                  url: "https://webaim.org/"
+                  type: "docs"
+            - name: "Testes"
+              depth: "Decide"
+              expectation: "Define estratégias de testes para frontend em escala."
+              evidence:
+                - "Estabelece estratégia de testes robusta para frontend"
+              resources:
+                - title: "Testing Library"
+                  url: "https://testing-library.com/"
+                  type: "docs"
+          soft:
+            - name: "Liderança técnica"
+              depth: "Orienta"
+              expectation: "Influencia decisões arquiteturais em múltiplos times."
+              evidence:
+                - "Conduz discussões técnicas e alinha times"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Influencing Without Authority"
+                  url: "https://hbr.org/2018/11/influencing-without-authority"
+                  type: "artigo"
+            - name: "Mentoria"
+              depth: "Aplica"
+              expectation: "Mentora desenvolvedores de forma estruturada."
+              evidence:
+                - "Plano de desenvolvimento para múltiplos mentees"
+              resources:
+                - title: "Structured Mentoring Programs"
+                  url: "https://www.atlassian.com/blog/leadership/mentoring-best-practices"
+                  type: "artigo"
+                - title: "Mentoring Framework"
+                  url: "https://hbr.org/2017/03/how-to-be-a-good-mentor"
+                  type: "artigo"
+
+      "Pleno 3":
+        backend:
+          summary: "Pleno avançado: preparação para sênior com foco em liderança técnica e sistemas críticos."
+          scope:
+            - "Definir padrões técnicos organizacionais que impactam toda a empresa"
+            - "Projetar sistemas críticos e de alta escala considerando milhões de usuários"
+            - "Liderar iniciativas técnicas grandes: migrações, modernizações, refatorações"
+            - "Criar plataformas internas que reduzem fricção e aceleram desenvolvimento"
+            - "Mentorar desenvolvedores sênior, pleno e júnior"
+            - "Influenciar estratégia técnica organizacional"
+          tips:
+            - "Pense em plataformas que multiplicam impacto de desenvolvedores"
+            - "Estabeleça padrões que suportam crescimento organizacional"
+            - "Crie abstrações que simplifiquem trabalho de toda organização"
+            - "Documente princípios técnicos que guiem decisões organizacionais"
+          tech:
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, padrões e otimizações. Exemplos: Python, Java, Go, TypeScript, C#, Rust."
+              evidence:
+                - "Escreve código eficiente e escalável em alta escala"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "Framework"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de framework organizacionais. Exemplos: Express, Django, Spring Boot, ASP.NET Core, Gin."
+              evidence:
+                - "Orienta estratégia de framework para organização"
+              resources:
+                - title: "Framework Best Practices"
+                  url: "https://www.freecodecamp.org/news/rest-api-design-best-practices/"
+                  type: "artigo"
+                - title: "Django Best Practices"
+                  url: "https://docs.djangoproject.com/en/stable/misc/design-philosophies/"
+                  type: "docs"
+            - name: "APIs REST"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de API organizacionais."
+              evidence:
+                - "Orienta estratégia de APIs para organização"
+              resources:
+                - title: "API Design"
+                  url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
+            - name: "Banco de dados"
+              depth: "Orienta"
+              expectation: "Define estratégias de dados e modelagem organizacional."
+              evidence:
+                - "Orienta estratégia de dados para organização"
+              resources:
+                - title: "Database Performance"
+                  url: "https://use-the-index-luke.com/"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Orienta"
+              expectation: "Define estratégias de testes organizacionais."
+              evidence:
+                - "Orienta estratégia de testes para organização"
+              resources:
+                - title: "Test Pyramid"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Orienta"
+              expectation: "Define padrões e abstrações que reduzem custo organizacional."
+              evidence:
+                - "Cria plataformas que reduzem fricção organizacional"
+              resources:
+                - title: "Platform Engineering"
+                  url: "https://platformengineering.org/"
+                  type: "artigo"
+            - name: "Observabilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de observabilidade organizacional."
+              evidence:
+                - "Orienta estratégia de observabilidade para organização"
+              resources:
+                - title: "Observability 101"
+                  url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                  type: "artigo"
+            - name: "Performance e escalabilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de performance organizacionais."
+              evidence:
+                - "Orienta estratégia de performance para organização"
+              resources:
+                - title: "High Performance Systems"
+                  url: "https://www.oreilly.com/library/view/high-performance-browser/9781449344757/"
+                  type: "artigo"
+            - name: "Segurança"
+              depth: "Orienta"
+              expectation: "Define estratégias de segurança organizacional."
+              evidence:
+                - "Orienta estratégia de segurança para organização"
+              resources:
+                - title: "Security Engineering"
+                  url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
+                  type: "artigo"
+          soft:
+            - name: "Liderança técnica"
+              depth: "Orienta"
+              expectation: "Guia arquitetura e padrões organizacionais."
+              evidence:
+                - "Influencia arquitetura em múltiplos times"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Technical Leadership"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+            - name: "Estratégia técnica"
+              depth: "Orienta"
+              expectation: "Conecta visão de produto, riscos e evolução tecnológica."
+              evidence:
+                - "Define princípios e roadmap técnico com trade-offs claros"
+              resources:
+                - title: "Technical Strategy"
+                  url: "https://staffeng.com/book/staff-engineer"
+                  type: "artigo"
+                - title: "Building Technical Strategy"
+                  url: "https://www.oreilly.com/library/view/software-architecture-the/9781492086888/"
+                  type: "artigo"
+
+        frontend:
+          summary: "Pleno avançado: preparação para sênior com foco em liderança técnica."
+          scope:
+            - "Definir padrões técnicos organizacionais que impactam toda a empresa"
+            - "Projetar sistemas frontend críticos e de alta escala"
+            - "Liderar iniciativas técnicas grandes: migrações, modernizações"
+            - "Criar plataformas frontend que reduzem fricção e aceleram desenvolvimento"
+            - "Mentorar desenvolvedores sênior, pleno e júnior"
+            - "Influenciar estratégia técnica organizacional"
+          tips:
+            - "Pense em plataformas que multiplicam impacto de desenvolvedores"
+            - "Estabeleça padrões que suportam crescimento organizacional"
+            - "Crie abstrações que simplifiquem trabalho de toda organização"
+            - "Documente princípios técnicos que guiem decisões organizacionais"
+          tech:
+            - name: "Framework"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de framework organizacionais."
+              evidence:
+                - "Orienta estratégia de framework para organização"
+              resources:
+                - title: "React Documentation"
+                  url: "https://react.dev/"
+                  type: "docs"
+                - title: "Vue.js Guide"
+                  url: "https://vuejs.org/guide/"
+                  type: "docs"
+            - name: "State Management"
+              depth: "Orienta"
+              expectation: "Define estratégias de gerenciamento de estado organizacionais."
+              evidence:
+                - "Orienta estratégia de state management para organização"
+              resources:
+                - title: "State Management"
+                  url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Orienta"
+              expectation: "Define padrões e abstrações que reduzem custo organizacional."
+              evidence:
+                - "Cria plataformas frontend que reduzem fricção organizacional"
+              resources:
+                - title: "Micro Frontends"
+                  url: "https://micro-frontends.org/"
+                  type: "artigo"
+            - name: "Design systems"
+              depth: "Orienta"
+              expectation: "Define estratégias de design system organizacionais."
+              evidence:
+                - "Orienta estratégia de design system para organização"
+              resources:
+                - title: "Design Systems"
+                  url: "https://www.designsystems.com/"
+                  type: "artigo"
+            - name: "Performance"
+              depth: "Orienta"
+              expectation: "Define estratégias de performance organizacionais."
+              evidence:
+                - "Orienta estratégia de performance para organização"
+              resources:
+                - title: "Web.dev Performance"
+                  url: "https://web.dev/performance/"
+                  type: "docs"
+            - name: "Acessibilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de acessibilidade organizacionais."
+              evidence:
+                - "Orienta estratégia de acessibilidade para organização"
+              resources:
+                - title: "WebAIM"
+                  url: "https://webaim.org/"
+                  type: "docs"
+          soft:
+            - name: "Liderança técnica"
+              depth: "Orienta"
+              expectation: "Guia arquitetura frontend organizacional."
+              evidence:
+                - "Arquitetura que suporta crescimento organizacional"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Technical Leadership"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+            - name: "Estratégia técnica"
+              depth: "Orienta"
+              expectation: "Conecta visão de produto com evolução tecnológica."
+              evidence:
+                - "Define roadmap técnico alinhado com negócio"
+              resources:
+                - title: "Technical Strategy"
+                  url: "https://staffeng.com/book/staff-engineer"
+                  type: "artigo"
+                - title: "Building Technical Strategy"
+                  url: "https://www.oreilly.com/library/view/software-architecture-the/9781492086888/"
+                  type: "artigo"
 
   Sênior:
     early_stage:
@@ -914,6 +1766,11 @@ levels:
           - "Projetar sistemas distribuídos no escopo do domínio"
           - "Liderar incidentes e pós-mortems"
           - "Projetar sistemas centrais"
+        tips:
+          - "Projete sistemas pensando em falhas - elas vão acontecer"
+          - "Invista em observabilidade - você não pode melhorar o que não mede"
+          - "Documente decisões arquiteturais complexas para referência futura"
+          - "Conduza pós-mortems que gerem aprendizado real, não apenas culpa"
         tech:
           - name: "Linguagem"
             depth: "Aplica"
@@ -996,6 +1853,11 @@ levels:
           - "Projetar sistemas frontend complexos e escaláveis"
           - "Liderar migrações e refatorações grandes"
           - "Projetar frontend escalável"
+        tips:
+          - "Pense em arquitetura que suporte crescimento de times e features"
+          - "Estabeleça padrões de performance que sejam medidos e monitorados"
+          - "Considere micro-frontends quando times precisam de mais autonomia"
+          - "Conecte decisões técnicas com objetivos de negócio"
         tech:
           - name: "HTML/CSS"
             depth: "Aplica"
@@ -1089,6 +1951,13 @@ levels:
             expectation: "Conecta decisões técnicas com objetivos de negócio."
             evidence:
               - "Propõe melhorias técnicas que impactam produto"
+            resources:
+              - title: "Product Thinking for Engineers"
+                url: "https://www.oreilly.com/library/view/product-thinking-for/9781492051994/"
+                type: "artigo"
+              - title: "Technical Product Management"
+                url: "https://www.mindtheproduct.com/technical-product-management/"
+                type: "artigo"
 
     established:
       "Sênior 1":
@@ -1097,16 +1966,33 @@ levels:
           scope:
             - "Projetar sistemas críticos e de alta escala"
             - "Liderar incidentes e pós-mortems"
+          tips:
+            - "Projete sistemas pensando em resiliência e recuperação rápida"
+            - "Crie plataformas que reduzam fricção para desenvolvedores"
+            - "Documente decisões estratégicas que impactam múltiplos times"
+            - "Conduza pós-mortems focados em aprendizado, não em culpa"
           tech:
             - name: "Linguagem"
               depth: "Aplica"
-              expectation: "Sintaxe avançada, padrões e otimizações."
+              expectation: "Sintaxe avançada, padrões e otimizações. Exemplos: Python, Java, Go, TypeScript, C#, Rust."
               evidence:
                 - "Escreve código eficiente e escalável"
               resources:
                 - title: "Clean Code"
                   url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
                   type: "artigo"
+            - name: "Framework"
+              depth: "Decide"
+              expectation: "Define padrões de framework e estrutura de projeto. Exemplos: Express, Django, Spring Boot, ASP.NET Core, Gin."
+              evidence:
+                - "Estabelece padrões de framework para o time"
+              resources:
+                - title: "Framework Best Practices"
+                  url: "https://www.freecodecamp.org/news/rest-api-design-best-practices/"
+                  type: "artigo"
+                - title: "Django Best Practices"
+                  url: "https://docs.djangoproject.com/en/stable/misc/design-philosophies/"
+                  type: "docs"
             - name: "APIs REST"
               depth: "Decide"
               expectation: "Define padrões avançados e estratégias de integração."
@@ -1161,7 +2047,7 @@ levels:
                 - title: "Security Engineering"
                   url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
                   type: "artigo"
-            - name: "Performance"
+            - name: "Performance e escalabilidade"
               depth: "Decide"
               expectation: "Otimização para milhões de usuários, caching avançado."
               evidence:
@@ -1176,26 +2062,102 @@ levels:
               expectation: "Guia arquitetura e padrões organizacionais."
               evidence:
                 - "Influencia arquitetura em múltiplos times"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Technical Leadership"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
             - name: "Incident management"
               depth: "Aplica"
               expectation: "Lidera incidentes críticos e aprendizado pós-incidente."
               evidence:
                 - "Conduz pós-mortems que geram aprendizado real"
+              resources:
+                - title: "Postmortem Culture"
+                  url: "https://www.atlassian.com/incident-management/handbook/postmortems"
+                  type: "docs"
+                - title: "Blameless Postmortems"
+                  url: "https://www.oreilly.com/library/view/site-reliability-engineering/9781491928914/ch15.html"
+                  type: "artigo"
 
         frontend:
           summary: "Sênior inicial: lidera projetos complexos e estratégicos."
           scope:
             - "Projetar sistemas frontend de grande escala"
             - "Liderar transformações técnicas"
+          tips:
+            - "Pense em arquitetura que suporte crescimento organizacional"
+            - "Crie plataformas que acelerem desenvolvimento de múltiplos times"
+            - "Alinhe estratégia técnica com visão de longo prazo do negócio"
+            - "Comunique mudanças técnicas de forma clara para toda organização"
           tech:
+            - name: "Framework"
+              depth: "Decide"
+              expectation: "Define padrões de componentes e estrutura de projeto."
+              evidence:
+                - "Estabelece padrões de framework para o time"
+              resources:
+                - title: "React Documentation"
+                  url: "https://react.dev/"
+                  type: "docs"
+                - title: "Vue.js Guide"
+                  url: "https://vuejs.org/guide/"
+                  type: "docs"
+            - name: "State Management"
+              depth: "Decide"
+              expectation: "Define estratégias de gerenciamento de estado."
+              evidence:
+                - "Estabelece padrões de state management"
+              resources:
+                - title: "State Management"
+                  url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                  type: "artigo"
             - name: "Arquitetura"
               depth: "Decide"
-              expectation: "Sistemas que suportam milhões de usuários, alta disponibilidade."
+              expectation: "Micro-frontends, design systems e escalabilidade."
               evidence:
-                - "Sistemas frontend escaláveis e resilientes"
+                - "Projeta arquitetura que suporta crescimento"
               resources:
-                - title: "Scalable Frontend Architecture"
-                  url: "https://www.oreilly.com/library/view/building-microservices/9781491950340/"
+                - title: "Micro Frontends"
+                  url: "https://micro-frontends.org/"
+                  type: "artigo"
+            - name: "Performance"
+              depth: "Decide"
+              expectation: "Otimização avançada, code splitting e lazy loading."
+              evidence:
+                - "Projeta aplicações performáticas em escala"
+              resources:
+                - title: "Web.dev Performance"
+                  url: "https://web.dev/performance/"
+                  type: "docs"
+            - name: "Acessibilidade"
+              depth: "Aplica"
+              expectation: "WCAG, ARIA, testes com leitores de tela."
+              evidence:
+                - "Garante aplicações acessíveis e inclusivas"
+              resources:
+                - title: "WebAIM"
+                  url: "https://webaim.org/"
+                  type: "docs"
+            - name: "Testes"
+              depth: "Decide"
+              expectation: "Define estratégias de testes para frontend."
+              evidence:
+                - "Estabelece estratégia de testes para o time"
+              resources:
+                - title: "Testing Library"
+                  url: "https://testing-library.com/"
+                  type: "docs"
+            - name: "Build e deploy"
+              depth: "Decide"
+              expectation: "CI/CD, otimização de builds e estratégias de deploy."
+              evidence:
+                - "Configura pipelines eficientes de deploy"
+              resources:
+                - title: "Frontend CI/CD"
+                  url: "https://www.freecodecamp.org/news/ci-cd-for-frontend/"
                   type: "artigo"
           soft:
             - name: "Liderança técnica"
@@ -1203,6 +2165,476 @@ levels:
               expectation: "Guia arquitetura frontend organizacional."
               evidence:
                 - "Arquitetura que suporta crescimento organizacional"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Technical Leadership"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+
+      "Sênior 2":
+        backend:
+          summary: "Sênior intermediário: aumenta escala e impacto organizacional."
+          scope:
+            - "Projetar sistemas críticos de alta escala considerando milhões de usuários"
+            - "Liderar resposta a incidentes críticos e conduzir pós-mortems que geram aprendizado"
+            - "Criar plataformas internas que reduzem fricção e aceleram desenvolvimento de múltiplos times"
+            - "Definir estratégias de segurança, observabilidade e performance organizacionais"
+            - "Influenciar arquitetura em múltiplos times através de liderança técnica"
+            - "Conectar decisões técnicas com objetivos de negócio e visão executiva"
+          tips:
+            - "Pense em plataformas que multiplicam impacto de desenvolvedores"
+            - "Estabeleça padrões que suportam crescimento organizacional"
+            - "Crie abstrações que simplifiquem trabalho de múltiplos times"
+            - "Documente decisões estratégicas que impactam toda organização"
+          tech:
+            - name: "Linguagem"
+              depth: "Aplica"
+              expectation: "Sintaxe avançada, padrões e otimizações. Exemplos: Python, Java, Go, TypeScript, C#, Rust."
+              evidence:
+                - "Escreve código eficiente e escalável em alta escala"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "Framework"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de framework organizacionais. Exemplos: Express, Django, Spring Boot, ASP.NET Core, Gin."
+              evidence:
+                - "Orienta estratégia de framework para organização"
+              resources:
+                - title: "Framework Best Practices"
+                  url: "https://www.freecodecamp.org/news/rest-api-design-best-practices/"
+                  type: "artigo"
+                - title: "Django Best Practices"
+                  url: "https://docs.djangoproject.com/en/stable/misc/design-philosophies/"
+                  type: "docs"
+            - name: "APIs REST"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de API organizacionais."
+              evidence:
+                - "Orienta estratégia de APIs para organização"
+              resources:
+                - title: "API Design"
+                  url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
+            - name: "Banco de dados"
+              depth: "Orienta"
+              expectation: "Define estratégias de dados e modelagem organizacional."
+              evidence:
+                - "Orienta estratégia de dados para organização"
+              resources:
+                - title: "Database Performance"
+                  url: "https://use-the-index-luke.com/"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Orienta"
+              expectation: "Define estratégias de testes organizacionais."
+              evidence:
+                - "Orienta estratégia de testes para organização"
+              resources:
+                - title: "Test Pyramid"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Orienta"
+              expectation: "Define padrões e abstrações que reduzem custo organizacional."
+              evidence:
+                - "Cria plataformas que reduzem fricção organizacional"
+              resources:
+                - title: "Platform Engineering"
+                  url: "https://platformengineering.org/"
+                  type: "artigo"
+            - name: "Observabilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de observabilidade organizacional."
+              evidence:
+                - "Orienta estratégia de observabilidade para organização"
+              resources:
+                - title: "Observability 101"
+                  url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                  type: "artigo"
+            - name: "Performance e escalabilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de performance organizacionais."
+              evidence:
+                - "Orienta estratégia de performance para organização"
+              resources:
+                - title: "High Performance Systems"
+                  url: "https://www.oreilly.com/library/view/high-performance-browser/9781449344757/"
+                  type: "artigo"
+            - name: "Segurança"
+              depth: "Orienta"
+              expectation: "Define estratégias de segurança organizacional."
+              evidence:
+                - "Orienta estratégia de segurança para organização"
+              resources:
+                - title: "Security Engineering"
+                  url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
+                  type: "artigo"
+          soft:
+            - name: "Liderança técnica"
+              depth: "Orienta"
+              expectation: "Guia arquitetura e padrões organizacionais."
+              evidence:
+                - "Influencia arquitetura em múltiplos times"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Technical Leadership"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+            - name: "Incident management"
+              depth: "Aplica"
+              expectation: "Lidera incidentes críticos e aprendizado pós-incidente."
+              evidence:
+                - "Conduz pós-mortems que geram aprendizado real"
+              resources:
+                - title: "Postmortem Culture"
+                  url: "https://www.atlassian.com/incident-management/handbook/postmortems"
+                  type: "docs"
+                - title: "Blameless Postmortems"
+                  url: "https://www.oreilly.com/library/view/site-reliability-engineering/9781491928914/ch15.html"
+                  type: "artigo"
+            - name: "Estratégia técnica"
+              depth: "Orienta"
+              expectation: "Conecta visão de produto, riscos e evolução tecnológica."
+              evidence:
+                - "Define princípios e roadmap técnico com trade-offs claros"
+              resources:
+                - title: "Technical Strategy"
+                  url: "https://staffeng.com/book/staff-engineer"
+                  type: "artigo"
+                - title: "Building Technical Strategy"
+                  url: "https://www.oreilly.com/library/view/software-architecture-the/9781492086888/"
+                  type: "artigo"
+
+        frontend:
+          summary: "Sênior intermediário: aumenta escala e impacto organizacional."
+          scope:
+            - "Projetar sistemas frontend críticos de alta escala suportando milhões de usuários"
+            - "Liderar transformações técnicas grandes: migrações, modernizações, refatorações"
+            - "Criar plataformas frontend que aceleram desenvolvimento de múltiplos times"
+            - "Definir estratégias de performance, acessibilidade e SEO organizacionais"
+            - "Influenciar arquitetura frontend organizacional através de liderança técnica"
+            - "Alinhar estratégia técnica com visão de longo prazo do negócio"
+          tips:
+            - "Pense em plataformas que multiplicam impacto de desenvolvedores"
+            - "Estabeleça padrões que suportam crescimento organizacional"
+            - "Crie abstrações que simplifiquem trabalho de múltiplos times"
+            - "Documente decisões estratégicas que impactam toda organização"
+          tech:
+            - name: "Framework"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de framework organizacionais."
+              evidence:
+                - "Orienta estratégia de framework para organização"
+              resources:
+                - title: "React Documentation"
+                  url: "https://react.dev/"
+                  type: "docs"
+                - title: "Vue.js Guide"
+                  url: "https://vuejs.org/guide/"
+                  type: "docs"
+            - name: "State Management"
+              depth: "Orienta"
+              expectation: "Define estratégias de gerenciamento de estado organizacionais."
+              evidence:
+                - "Orienta estratégia de state management para organização"
+              resources:
+                - title: "State Management"
+                  url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Orienta"
+              expectation: "Define padrões e abstrações que reduzem custo organizacional."
+              evidence:
+                - "Cria plataformas frontend que reduzem fricção organizacional"
+              resources:
+                - title: "Micro Frontends"
+                  url: "https://micro-frontends.org/"
+                  type: "artigo"
+            - name: "Design systems"
+              depth: "Orienta"
+              expectation: "Define estratégias de design system organizacionais."
+              evidence:
+                - "Orienta estratégia de design system para organização"
+              resources:
+                - title: "Design Systems"
+                  url: "https://www.designsystems.com/"
+                  type: "artigo"
+            - name: "Performance"
+              depth: "Orienta"
+              expectation: "Define estratégias de performance organizacionais."
+              evidence:
+                - "Orienta estratégia de performance para organização"
+              resources:
+                - title: "Web.dev Performance"
+                  url: "https://web.dev/performance/"
+                  type: "docs"
+            - name: "Acessibilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de acessibilidade organizacionais."
+              evidence:
+                - "Orienta estratégia de acessibilidade para organização"
+              resources:
+                - title: "WebAIM"
+                  url: "https://webaim.org/"
+                  type: "docs"
+            - name: "Testes"
+              depth: "Orienta"
+              expectation: "Define estratégias de testes organizacionais."
+              evidence:
+                - "Orienta estratégia de testes para organização"
+              resources:
+                - title: "Testing Library"
+                  url: "https://testing-library.com/"
+                  type: "docs"
+          soft:
+            - name: "Liderança técnica"
+              depth: "Orienta"
+              expectation: "Guia arquitetura frontend organizacional."
+              evidence:
+                - "Arquitetura que suporta crescimento organizacional"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Technical Leadership"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+            - name: "Estratégia técnica"
+              depth: "Orienta"
+              expectation: "Conecta visão de produto com evolução tecnológica."
+              evidence:
+                - "Define roadmap técnico alinhado com negócio"
+              resources:
+                - title: "Technical Strategy"
+                  url: "https://staffeng.com/book/staff-engineer"
+                  type: "artigo"
+                - title: "Building Technical Strategy"
+                  url: "https://www.oreilly.com/library/view/software-architecture-the/9781492086888/"
+                  type: "artigo"
+
+      "Sênior 3":
+        backend:
+          summary: "Sênior avançado: preparação para Staff com foco em impacto organizacional."
+          scope:
+            - "Criar plataformas e ferramentas usadas por toda a organização"
+            - "Definir estratégia técnica de longo prazo alinhada com visão executiva"
+            - "Estabelecer abstrações e plataformas que reduzem custo organizacional"
+            - "Orientar decisões técnicas que impulsionam crescimento e eficiência organizacional"
+            - "Criar alavancas técnicas que multiplicam impacto de desenvolvedores"
+            - "Comunicar direção técnica de forma que inspire confiança e mobilize a organização"
+          tips:
+            - "Pense em alavancas técnicas que multiplicam impacto de desenvolvedores"
+            - "Estabeleça princípios técnicos que guiem decisões organizacionais"
+            - "Crie plataformas que reduzam custo organizacional e acelerem desenvolvimento"
+            - "Documente estratégia técnica de forma que mobilize toda organização"
+          tech:
+            - name: "Linguagem"
+              depth: "Orienta"
+              expectation: "Define padrões de código e boas práticas organizacionais. Exemplos: Python, Java, Go, TypeScript, C#, Rust."
+              evidence:
+                - "Estabelece padrões de código para organização"
+              resources:
+                - title: "Clean Code"
+                  url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                  type: "artigo"
+            - name: "Framework"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de framework organizacionais. Exemplos: Express, Django, Spring Boot, ASP.NET Core, Gin."
+              evidence:
+                - "Orienta estratégia de framework para organização"
+              resources:
+                - title: "Framework Best Practices"
+                  url: "https://www.freecodecamp.org/news/rest-api-design-best-practices/"
+                  type: "artigo"
+                - title: "Django Best Practices"
+                  url: "https://docs.djangoproject.com/en/stable/misc/design-philosophies/"
+                  type: "docs"
+            - name: "APIs REST"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de API organizacionais."
+              evidence:
+                - "Orienta estratégia de APIs para organização"
+              resources:
+                - title: "API Design"
+                  url: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+                  type: "artigo"
+            - name: "Banco de dados"
+              depth: "Orienta"
+              expectation: "Define estratégias de dados e modelagem organizacional."
+              evidence:
+                - "Orienta estratégia de dados para organização"
+              resources:
+                - title: "Database Performance"
+                  url: "https://use-the-index-luke.com/"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Orienta"
+              expectation: "Define estratégias de testes organizacionais."
+              evidence:
+                - "Orienta estratégia de testes para organização"
+              resources:
+                - title: "Test Pyramid"
+                  url: "https://martinfowler.com/articles/practical-test-pyramid.html"
+                  type: "artigo"
+            - name: "Plataforma organizacional"
+              depth: "Orienta"
+              expectation: "Plataformas que reduzem custo organizacional e aceleram desenvolvimento."
+              evidence:
+                - "Plataformas usadas por toda organização"
+              resources:
+                - title: "Staff Engineer"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Orienta"
+              expectation: "Define padrões e abstrações que reduzem custo organizacional."
+              evidence:
+                - "Entrega plataforma/recurso que reduz fricção de times"
+              resources:
+                - title: "Staff Engineer archetypes"
+                  url: "https://staffeng.com/guides/staff-archetypes"
+                  type: "artigo"
+            - name: "Observabilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de observabilidade organizacional."
+              evidence:
+                - "Orienta estratégia de observabilidade para organização"
+              resources:
+                - title: "Observability 101"
+                  url: "https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/"
+                  type: "artigo"
+            - name: "Segurança"
+              depth: "Orienta"
+              expectation: "Define estratégias de segurança organizacional."
+              evidence:
+                - "Orienta estratégia de segurança para organização"
+              resources:
+                - title: "Security Engineering"
+                  url: "https://www.oreilly.com/library/view/security-engineering/9780470068526/"
+                  type: "artigo"
+          soft:
+            - name: "Estratégia organizacional"
+              depth: "Orienta"
+              expectation: "Define direção técnica que impulsiona organização."
+              evidence:
+                - "Estratégia técnica alinhada com visão executiva"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Organizational Strategy"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+
+        frontend:
+          summary: "Sênior avançado: preparação para Staff com foco em impacto organizacional."
+          scope:
+            - "Criar plataformas frontend organizacionais usadas por toda a organização"
+            - "Definir estratégia técnica de longo prazo alinhada com visão executiva"
+            - "Estabelecer padrões, design systems e tooling que suportam crescimento organizacional"
+            - "Criar abstrações e plataformas que aceleram desenvolvimento e garantem qualidade"
+            - "Orientar decisões técnicas que impulsionam eficiência e inovação organizacional"
+            - "Comunicar estratégia técnica de forma que mobilize e alinhe toda a organização"
+          tips:
+            - "Pense em alavancas técnicas que multiplicam impacto de desenvolvedores"
+            - "Estabeleça princípios técnicos que guiem decisões organizacionais"
+            - "Crie plataformas que reduzam custo organizacional e acelerem desenvolvimento"
+            - "Documente estratégia técnica de forma que mobilize toda organização"
+          tech:
+            - name: "Framework"
+              depth: "Orienta"
+              expectation: "Define estratégias e padrões de framework organizacionais."
+              evidence:
+                - "Orienta estratégia de framework para organização"
+              resources:
+                - title: "React Documentation"
+                  url: "https://react.dev/"
+                  type: "docs"
+                - title: "Vue.js Guide"
+                  url: "https://vuejs.org/guide/"
+                  type: "docs"
+            - name: "State Management"
+              depth: "Orienta"
+              expectation: "Define estratégias de gerenciamento de estado organizacionais."
+              evidence:
+                - "Orienta estratégia de state management para organização"
+              resources:
+                - title: "State Management"
+                  url: "https://kentcdodds.com/blog/application-state-management-with-react"
+                  type: "artigo"
+            - name: "Testes"
+              depth: "Orienta"
+              expectation: "Define estratégias de testes organizacionais."
+              evidence:
+                - "Orienta estratégia de testes para organização"
+              resources:
+                - title: "Testing Library"
+                  url: "https://testing-library.com/"
+                  type: "docs"
+            - name: "Performance"
+              depth: "Orienta"
+              expectation: "Define estratégias de performance organizacionais."
+              evidence:
+                - "Orienta estratégia de performance para organização"
+              resources:
+                - title: "Web.dev Performance"
+                  url: "https://web.dev/performance/"
+                  type: "docs"
+            - name: "Acessibilidade"
+              depth: "Orienta"
+              expectation: "Define estratégias de acessibilidade organizacionais."
+              evidence:
+                - "Orienta estratégia de acessibilidade para organização"
+              resources:
+                - title: "WebAIM"
+                  url: "https://webaim.org/"
+                  type: "docs"
+            - name: "Plataforma frontend organizacional"
+              depth: "Orienta"
+              expectation: "Plataformas que reduzem custo e aceleram desenvolvimento."
+              evidence:
+                - "Plataformas usadas por toda organização"
+              resources:
+                - title: "Staff Engineer"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
+            - name: "Design systems"
+              depth: "Orienta"
+              expectation: "Define estratégias de design system organizacionais."
+              evidence:
+                - "Orienta estratégia de design system para organização"
+              resources:
+                - title: "Design Systems"
+                  url: "https://www.designsystems.com/"
+                  type: "artigo"
+            - name: "Arquitetura"
+              depth: "Orienta"
+              expectation: "Define padrões e abstrações que reduzem custo organizacional."
+              evidence:
+                - "Cria plataformas frontend que reduzem fricção organizacional"
+              resources:
+                - title: "Micro Frontends"
+                  url: "https://micro-frontends.org/"
+                  type: "artigo"
+          soft:
+            - name: "Estratégia organizacional"
+              depth: "Orienta"
+              expectation: "Define direção técnica organizacional."
+              evidence:
+                - "Estratégia técnica alinhada com visão executiva"
+              resources:
+                - title: "The Staff Engineer's Path"
+                  url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                  type: "artigo"
+                - title: "Organizational Strategy"
+                  url: "https://staffeng.com/"
+                  type: "artigo"
 
   Staff:
     early_stage:
@@ -1213,6 +2645,11 @@ levels:
           - "Orientar estratégia técnica com foco em sustentabilidade"
           - "Definir arquitetura base"
           - "Criar padrões e frameworks internos"
+        tips:
+          - "Crie alavancas técnicas que multipliquem impacto de outros desenvolvedores"
+          - "Pense em sustentabilidade técnica de longo prazo"
+          - "Conecte visão de produto com evolução tecnológica"
+          - "Documente princípios técnicos que guiem decisões organizacionais"
         tech:
           - name: "Linguagem"
             depth: "Decide"
@@ -1283,6 +2720,13 @@ levels:
             expectation: "Conecta visão de produto, riscos e evolução tecnológica."
             evidence:
               - "Define princípios e roadmap técnico com trade-offs claros"
+            resources:
+              - title: "Technical Strategy"
+                url: "https://staffeng.com/book/staff-engineer"
+                type: "artigo"
+              - title: "Building Technical Strategy"
+                url: "https://www.oreilly.com/library/view/software-architecture-the/9781492086888/"
+                type: "artigo"
 
       frontend:
         summary: "Impacto transversal: cria alavancas técnicas e orienta estratégia frontend."
@@ -1290,6 +2734,11 @@ levels:
           - "Criar design systems e ferramentas para múltiplos times"
           - "Definir estratégia técnica de longo prazo"
           - "Design system e tooling"
+        tips:
+          - "Crie design systems que reduzam fricção de múltiplos times"
+          - "Pense em tooling que acelere desenvolvimento sem sacrificar qualidade"
+          - "Alinhe estratégia técnica com objetivos de negócio de longo prazo"
+          - "Comunique roadmap técnico de forma clara para stakeholders"
         tech:
           - name: "Plataforma frontend"
             depth: "Orienta"
@@ -1306,6 +2755,13 @@ levels:
             expectation: "Conecta visão de produto com evolução tecnológica."
             evidence:
               - "Define roadmap técnico alinhado com negócio"
+            resources:
+              - title: "Technical Strategy"
+                url: "https://staffeng.com/book/staff-engineer"
+                type: "artigo"
+              - title: "Building Technical Strategy"
+                url: "https://www.oreilly.com/library/view/software-architecture-the/9781492086888/"
+                type: "artigo"
 
     established:
       backend:
@@ -1314,6 +2770,11 @@ levels:
           - "Criar plataformas e ferramentas para toda organização"
           - "Definir estratégia técnica de longo prazo"
           - "Criar plataformas organizacionais"
+        tips:
+          - "Crie plataformas que reduzam custo organizacional e acelerem desenvolvimento"
+          - "Pense em abstrações que simplifiquem trabalho de múltiplos times"
+          - "Alinhe estratégia técnica com visão executiva da organização"
+          - "Comunique direção técnica de forma que inspire confiança e clareza"
         tech:
           - name: "Plataforma organizacional"
             depth: "Orienta"
@@ -1330,6 +2791,13 @@ levels:
             expectation: "Define direção técnica que impulsiona organização."
             evidence:
               - "Estratégia técnica alinhada com visão executiva"
+            resources:
+              - title: "The Staff Engineer's Path"
+                url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                type: "artigo"
+              - title: "Organizational Strategy"
+                url: "https://staffeng.com/"
+                type: "artigo"
 
       frontend:
         summary: "Impacto transversal: plataformas e estratégia organizacional."
@@ -1337,6 +2805,11 @@ levels:
           - "Criar plataformas frontend organizacionais"
           - "Definir estratégia técnica de longo prazo"
           - "Plataformas, padrões e visão de longo prazo"
+        tips:
+          - "Crie plataformas frontend que suportem crescimento organizacional"
+          - "Estabeleça padrões que facilitem colaboração entre times"
+          - "Defina visão técnica de longo prazo alinhada com estratégia de negócio"
+          - "Comunique estratégia técnica de forma que mobilize toda organização"
         tech:
           - name: "Plataforma frontend organizacional"
             depth: "Orienta"
@@ -1353,3 +2826,10 @@ levels:
             expectation: "Define direção técnica organizacional."
             evidence:
               - "Estratégia técnica alinhada com visão executiva"
+            resources:
+              - title: "The Staff Engineer's Path"
+                url: "https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/"
+                type: "artigo"
+              - title: "Organizational Strategy"
+                url: "https://staffeng.com/"
+                type: "artigo"
