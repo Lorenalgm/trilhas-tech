@@ -58,7 +58,6 @@ if scope:
     with st.container():
         for i, s in enumerate(scope, 1):
             st.markdown(f"**{i}.** {s}")
-    st.markdown("---")
 
 def create_skills_dataframe(skills):
     if not skills:
@@ -90,7 +89,7 @@ def create_skills_dataframe(skills):
     return pd.DataFrame(data)
 
 def render_skill_details(skill, skill_name):
-    with st.expander(f"Detalhes completos: {skill_name}", expanded=False):
+    with st.expander(f"{skill_name}", expanded=False):
         st.markdown(f"**Expectativa:** {skill.get('expectation', 'N/A')}")
         
         evidence = skill.get("evidence", [])
@@ -111,7 +110,7 @@ def render_skill_details(skill, skill_name):
                 else:
                     st.markdown(f"{label} - *{rtype}*")
 
-tabs = st.tabs(["🔧 Competências técnicas", "💼 Competências não técnicas"])
+tabs = st.tabs(["Competências técnicas", "Competências não técnicas"])
 
 with tabs[0]:
     if tech:
@@ -163,7 +162,7 @@ with tabs[0]:
             )
             
             st.markdown("---")
-            st.markdown("#### Detalhes completos das competências")
+            st.markdown("#### Detalhes das competências")
             st.caption("Expanda cada seção para ver expectativas completas, evidências e materiais recomendados.")
             for skill in tech:
                 render_skill_details(skill, skill.get("name", ""))
