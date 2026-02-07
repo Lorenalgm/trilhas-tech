@@ -7,20 +7,6 @@ def render_sidebar():
     DATA = load_data("data/sample.yml")
     
     with st.sidebar:
-       
-        st.title("Navegação")
-        
-        page = st.radio(
-            "Página",
-            ["Início", "Trilha", "Detalhes", "Comparação"],
-            index=["Início", "Trilha", "Detalhes", "Comparação"].index(
-                st.session_state.current_page
-            ) if st.session_state.current_page in ["Início", "Trilha", "Detalhes", "Comparação"] else 0,
-        )
-        if page != st.session_state.current_page:
-            st.session_state.current_page = page
-            st.rerun()
-
         st.markdown("### Escolha:")
         
         context_keys = list(DATA["contexts"].keys())
